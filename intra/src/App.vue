@@ -14,6 +14,10 @@
     <v-content>
       <router-view />
     </v-content>
+    <v-footer app color="primary" dark absolute>
+      <v-spacer></v-spacer>
+      <div>SHINWHAINTECH</div>
+    </v-footer>
   </v-app>
 </template>
 

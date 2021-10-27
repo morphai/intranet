@@ -8,9 +8,6 @@
       <v-app-bar-nav-icon @click="drawer = !drawer" />
       <site-title :title="site.title"></site-title>
       <v-spacer />
-      <v-btn icon @click="save"><v-icon>mdi-check</v-icon></v-btn>
-      <v-btn icon @click="read"><v-icon>mdi-read</v-icon></v-btn>
-      <v-btn icon @click="readOne"><v-icon>mdi-account</v-icon></v-btn>
     </v-app-bar>
     <v-navigation-drawer app v-model="drawer">
       <site-menu :items="site.menu"></site-menu>
@@ -34,7 +31,33 @@ export default {
     return {
       drawer: false,
       site: {
-        menu: [],
+        menu: [
+          {
+            title: 'home',
+            icon: 'mdi-home',
+            subItems: [
+              {
+                title: 'Dashboard',
+                to: '/'
+              },
+              {
+                title: 'About',
+                to: '/about'
+              }
+            ]
+          },
+          {
+            title: 'about',
+            icon: 'mdi-information',
+            active: true,
+            subItems: [
+              {
+                title: 'xxx',
+                to: '/xxx'
+              }
+            ]
+          }
+        ],
         title: 'title 입니다.',
         footer: 'footer 입니다.'
       }
@@ -49,27 +72,12 @@ export default {
         const v = sn.val()
         if (!v) {
           this.$firebase.database().ref().child('site').set(this.site)
+          return
         }
         this.site = v
       }, (e) => {
         console.log(e.message)
       })
-    },
-    save () {
-      this.$firebase.database().ref().child('abcd').set({
-        title: 'abddd', email: '123@example.com'
-      })
-    },
-    read () {
-      this.$firebase.database().ref().child('abcd').on('value', (sn) => {
-        console.log(sn)
-        console.log(sn.val())
-      })
-    },
-    async readOne () {
-      const sn = await this.$firebase.database().ref().child('abcd').once('value')
-      console.log(sn)
-      console.log(sn.val())
     }
   }
 }

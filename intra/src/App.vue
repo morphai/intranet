@@ -6,19 +6,19 @@
       dark
     >
       <v-app-bar-nav-icon @click="drawer = !drawer" />
-      <site-title :title="title"></site-title>
+      <site-title :title="site.title"></site-title>
       <v-spacer />
       <v-btn icon @click="save"><v-icon>mdi-check</v-icon></v-btn>
       <v-btn icon @click="read"><v-icon>mdi-read</v-icon></v-btn>
       <v-btn icon @click="readOne"><v-icon>mdi-account</v-icon></v-btn>
     </v-app-bar>
     <v-navigation-drawer app v-model="drawer">
-      <site-menu></site-menu>
+      <site-menu :items="site.menu"></site-menu>
     </v-navigation-drawer>
     <v-content>
       <router-view />
     </v-content>
-    <site-footer :footer="footer"></site-footer>
+    <site-footer :footer="site.footer"></site-footer>
   </v-app>
 </template>
 
@@ -33,15 +33,28 @@ export default {
   data () {
     return {
       drawer: false,
-      item: [],
-      title: 'title 입니다.',
-      footer: 'footer 입니다.'
+      site: {
+        menu: [],
+        title: 'title 입니다.',
+        footer: 'footer 입니다.'
+      }
     }
   },
-  mounted () {
-    console.log(this.$firebase)
+  created () {
+    this.subscribe()
   },
   methods: {
+    subscribe () {
+      this.$firebase.database().ref().child('site').on('value', (sn) => {
+        const v = sn.val()
+        if (!v) {
+          this.$firebase.database().ref().child('site').set(this.site)
+        }
+        this.site = v
+      }, (e) => {
+        console.log(e.message)
+      })
+    },
     save () {
       this.$firebase.database().ref().child('abcd').set({
         title: 'abddd', email: '123@example.com'

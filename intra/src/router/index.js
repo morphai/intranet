@@ -29,6 +29,11 @@ const routes = [
     path: '/storage',
     name: 'storage',
     component: () => import('../views/storage')
+  },
+  {
+    path: '/editor',
+    name: 'editor',
+    component: () => import('../views/editor')
   }
 ]
 

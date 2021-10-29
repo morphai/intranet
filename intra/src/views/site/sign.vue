@@ -24,9 +24,13 @@
       </v-btn>
     </template>
     <v-card>
-      <v-card-title>정보</v-card-title>
+      <v-card-subtitle>
+        <v-icon left>mdi-account</v-icon>{{$store.state.fireUser.displayName}}
+        <v-spacer></v-spacer>
+        <v-icon left>mdi-email</v-icon>{{$store.state.fireUser.email}}
+      </v-card-subtitle>
       <v-card-actions>
-        <v-btn color="" dark @click="signOut" block>로그아웃</v-btn>
+        <v-btn color="primary" dark @click="signOut" block>로그아웃</v-btn>
       </v-card-actions>
     </v-card>
   </v-menu>

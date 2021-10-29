@@ -3,10 +3,10 @@
     <v-list-item three-line>
       <v-list-item-content>
         <v-list-item-title class="title">
-          Menu
+          SHINWHAINTECH
         </v-list-item-title>
         <v-list-item-subtitle>
-          0.0.1
+          DATABASE v1.0
         </v-list-item-subtitle>
       </v-list-item-content>
       <v-list-item-action>

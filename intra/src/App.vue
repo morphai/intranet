@@ -2,21 +2,20 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
-      dark
+      color="grey lighten-2"
     >
       <v-app-bar-nav-icon @click="drawer = !drawer" />
       <site-title :title="site.title"></site-title>
       <v-spacer />
       <site-sign></site-sign>
     </v-app-bar>
-    <v-navigation-drawer app v-model="drawer" width="400">
+    <v-navigation-drawer color="grey lighten-2" app v-model="drawer" width="300">
       <site-menu :items="site.menu"></site-menu>
     </v-navigation-drawer>
     <v-content>
       <router-view />
     </v-content>
-    <site-footer :footer="site.footer"></site-footer>
+    <site-footer  :footer="site.footer"></site-footer>
   </v-app>
 </template>
 

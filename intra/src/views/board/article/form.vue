@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-form>
       <v-card :loading="loading">
-        <v-toolbar color="accent" dense flat dark>
+        <v-toolbar color="primary" dark dense>
           <v-toolbar-title>게시판 글 작성</v-toolbar-title>
         <v-spacer/>
         <v-btn icon @click="$router.push('/board/' + document)"><v-icon>mdi-arrow-left</v-icon></v-btn>
@@ -10,9 +10,9 @@
         </v-toolbar>
         <v-card-text>
           <v-text-field v-model="form.title" outlined label="제목"></v-text-field>
-          <editor v-if="!articleId" :initialValue="form.content" ref="editor" initialEditType="wysiwyg" :options="{ hideModeSwitch: true }"></editor>
+          <editor v-if="!articleId" :initialValue="form.content" ref="editor" initialEditType="wysiwyg" height="650px" :options="{ hideModeSwitch: true}"></editor>
           <template v-else>
-            <editor v-if="form.content" :initialValue="form.content" ref="editor" initialEditType="wysiwyg" :options="{ hideModeSwitch: true }"></editor>
+            <editor v-if="form.content" :initialValue="form.content" ref="editor" initialEditType="wysiwyg" height="650px" :options="{ hideModeSwitch: true}"></editor>
             <v-container v-else>
               <v-row justify="center" align="center">
                 <v-progress-circular indeterminate></v-progress-circular>

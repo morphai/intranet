@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-form>
       <v-card :loading="loading">
-        <v-toolbar color="accent" dense flat dark>
+        <v-toolbar color="primary" dark dense>
           <v-toolbar-title>게시판 정보 작성</v-toolbar-title>
         <v-spacer/>
         <v-btn icon @click="$router.push('/board/' + document)"><v-icon>mdi-arrow-left</v-icon></v-btn>

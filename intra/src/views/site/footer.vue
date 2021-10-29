@@ -1,5 +1,5 @@
 <template>
-  <v-footer app color="primary" dark absolute :footer="footer">
+  <v-footer app color="grey lighten-2" absolute :footer="footer">
     <v-spacer></v-spacer>
     <div>&copy; {{ new Date().getFullYear() + ' ' + footer }}</div>
     <v-btn icon @click="openDialog"><v-icon>mdi-pencil</v-icon></v-btn>

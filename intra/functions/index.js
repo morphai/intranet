@@ -42,3 +42,15 @@ exports.incrementBoardCount = functions.firestore.document('boards/{bid}').onCre
 exports.decrementBoardCount = functions.firestore.document('boards/{bid}').onDelete(async (snap, context) => {
   await fdb.collection('meta').doc('boards').update('count', admin.firestore.FieldValue.increment(-1))
 })
+
+exports.incrementProductionCount = functions.firestore.document('production/{bid}').onCreate(async (snap, context) => {
+  try {
+    await fdb.collection('meta').doc('production').update('count', admin.firestore.FieldValue.increment(1))
+  } catch (e) {
+    await fdb.collection('meta').doc('production').set({ count: 1 })
+  }
+})
+
+exports.decrementProductionCount = functions.firestore.document('production/{bid}').onDelete(async (snap, context) => {
+  await fdb.collection('meta').doc('production').update('count', admin.firestore.FieldValue.increment(-1))
+})

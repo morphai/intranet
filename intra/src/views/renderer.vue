@@ -5,6 +5,10 @@
   <board-article-form v-else-if="collection === 'board' && action === 'article-write'" :document="document" :action="action"></board-article-form>
   <page-index v-else-if="collection === 'page' && document === 'list'"></page-index>
   <page-content v-else-if="collection === 'page'" :document="document"></page-content>
+  <production-index v-else-if="collection === 'production' && document === 'list'"></production-index>
+  <production-content v-else-if="collection === 'production' && !action" :document="document"></production-content>
+  <production-form v-else-if="collection === 'production' && action === 'production-write'" :document="document" :action="action"></production-form>
+  <Production-article-form v-else-if="collection === 'production' && action === 'article-write'" :document="document" :action="action"></Production-article-form>
   <error-page v-else></error-page>
 </template>
 <script>
@@ -14,10 +18,14 @@ import BoardForm from './board/form'
 import BoardArticleForm from './board/article/form'
 import PageIndex from './page/index'
 import PageContent from './page/content'
+import ProductionIndex from './production/index'
+import ProductionContent from './production/content'
+import ProductionForm from './production/form'
+import ProductionArticleForm from './production/article/form'
 import ErrorPage from './error'
 export default {
   components: {
-    BoardIndex, BoardContent, BoardForm, BoardArticleForm, PageIndex, PageContent, ErrorPage
+    BoardIndex, BoardContent, BoardForm, BoardArticleForm, PageIndex, PageContent, ProductionIndex, ProductionContent, ProductionForm, ProductionArticleForm, ErrorPage
   },
   computed: {
     collection () {

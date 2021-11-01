@@ -25,7 +25,17 @@ import ProductionArticleForm from './production/article/form'
 import ErrorPage from './error'
 export default {
   components: {
-    BoardIndex, BoardContent, BoardForm, BoardArticleForm, PageIndex, PageContent, ProductionIndex, ProductionContent, ProductionForm, ProductionArticleForm, ErrorPage
+    BoardIndex,
+    BoardContent,
+    BoardForm,
+    BoardArticleForm,
+    PageIndex,
+    PageContent,
+    ProductionIndex,
+    ProductionContent,
+    ProductionForm,
+    ProductionArticleForm,
+    ErrorPage
   },
   computed: {
     collection () {

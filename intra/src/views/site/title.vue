@@ -1,7 +1,9 @@
 <template>
-  <v-toolbar-title v-if="user">
+  <v-toolbar-title>
     {{ title }}
-    <v-btn v-if="user.level < 1" icon @click="openDialog"><v-icon>mdi-pencil</v-icon></v-btn>
+    <template  v-if="user">
+      <v-btn v-if="user.level < 1" icon @click="openDialog"><v-icon>mdi-pencil</v-icon></v-btn>
+    </template>
     <v-dialog v-model="dialog" max-width="400">
       <v-card>
         <v-card-title>

@@ -8,10 +8,7 @@
       <v-card-title>로그인</v-card-title>
       <v-divider/>
       <v-card-actions>
-        <v-btn color="red" dark @click="signInWithGoogle" block><v-icon left>mdi-google</v-icon> 구글로 로그인</v-btn>
-      </v-card-actions>
-      <v-card-actions>
-        <v-btn color="blue" dark @click="signInWithFacebook" block><v-icon left>mdi-facebook</v-icon> 구글로 로그인</v-btn>
+        <v-btn color="primary" dark @click="signInWithGoogle" block><v-icon left>mdi-google</v-icon> 구글로 로그인</v-btn>
       </v-card-actions>
     </v-card>
   </v-menu>
@@ -56,9 +53,6 @@ export default {
     },
     signOut () {
       this.$firebase.auth().signOut()
-    },
-    signInWithFacebook () {
-      throw Error('나중에 만들께요')
     }
   }
 }

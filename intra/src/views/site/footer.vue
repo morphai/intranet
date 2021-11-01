@@ -1,8 +1,10 @@
 <template>
-  <v-footer v-if="user" app color="grey lighten-2" absolute :footer="footer">
+  <v-footer app color="grey lighten-2" absolute :footer="footer">
     <v-spacer></v-spacer>
     <div>&copy; {{ new Date().getFullYear() + ' ' + footer }}</div>
-    <v-btn v-if="user.level < 1" icon @click="openDialog"><v-icon>mdi-pencil</v-icon></v-btn>
+    <template v-if="user">
+      <v-btn v-if="user.level < 1" icon @click="openDialog"><v-icon>mdi-pencil</v-icon></v-btn>
+    </template>
     <v-dialog v-model="dialog" max-width="400">
       <v-card>
         <v-card-title>

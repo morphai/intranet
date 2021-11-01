@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="user">
     <v-list-item three-line>
       <v-list-item-content>
         <v-list-item-title class="title">
@@ -10,8 +10,8 @@
         </v-list-item-subtitle>
       </v-list-item-content>
       <v-list-item-action>
-        <v-btn @click="$store.commit('setEdit', !$store.state.editable)" icon>
-          <v-icon v-text="$store.state.editable ? 'mdi-eye' : 'mdi-pencil'"></v-icon>
+        <v-btn v-if="user.level < 1" @click="$store.commit('setEdit', !$store.state.editable)" icon>
+          <v-icon v-text="$store.state.editable ? 'mdi-toggle-switch-off-outline' : 'mdi-pencil'"></v-icon>
         </v-btn>
       </v-list-item-action>
     </v-list-item>
@@ -29,7 +29,7 @@
           <v-list-item-content>
             <v-list-item-title>
               {{ item.title }}
-              <span v-if="$store.state.editable">
+              <span v-if="$store.state.editable && user.level < 1">
                 <v-btn icon @click="openDialogItem(i)"><v-icon>mdi-pencil</v-icon></v-btn>
                 <v-btn icon @click="moveItem(items, i, -1)" v-if="i > 0"><v-icon>mdi-chevron-double-up</v-icon></v-btn>
                 <v-btn icon @click="moveItem(items, i, 1)" v-if="i < items.length - 1"><v-icon>mdi-chevron-double-down</v-icon></v-btn>
@@ -47,7 +47,7 @@
           <v-list-item-content>
             <v-list-item-title :class="$store.state.editable ? 'pl-4':''">
               {{ subItem.title }}
-              <span v-if="$store.state.editable">
+              <span v-if="$store.state.editable && user.level < 1">
                 <v-btn icon @click="openDialogSubItem(i, j)"><v-icon>mdi-pencil</v-icon></v-btn>
                 <v-btn icon @click="moveItem(item.subItems, j, -1)" v-if="j > 0"><v-icon>mdi-chevron-double-up</v-icon></v-btn>
                 <v-btn icon @click="moveItem(item.subItems, j, 1)" v-if="j < item.subItems.length - 1"><v-icon>mdi-chevron-double-down</v-icon></v-btn>
@@ -59,7 +59,7 @@
             <v-btn icon :to="subItem.to" exact><v-icon>mdi-arrow-right-bold-circle-outline</v-icon></v-btn>
           </v-list-item-action>
         </v-list-item>
-        <v-list-item @click="openDialogSubItem(i, -1)" v-if="$store.state.editable">
+        <v-list-item @click="openDialogSubItem(i, -1)" v-if="$store.state.editable && user.level < 1">
           <v-list-item-icon :class="$store.state.editable ? 'pl-4':''">
             <v-icon>mdi-plus</v-icon>
           </v-list-item-icon>
@@ -68,7 +68,7 @@
           </v-list-item-content>
         </v-list-item>
       </v-list-group>
-      <v-list-item @click="openDialogItem(-1)" v-if="$store.state.editable">
+      <v-list-item @click="openDialogItem(-1)" v-if="$store.state.editable && user.level < 1">
         <v-list-item-icon><v-icon>mdi-plus</v-icon></v-list-item-icon>
         <v-list-item-content>
           <v-list-item-title>추가하기</v-list-item-title>
@@ -136,6 +136,11 @@ export default {
         title: '',
         to: ''
       }
+    }
+  },
+  computed: {
+    user () {
+      return this.$store.state.user
     }
   },
   methods: {

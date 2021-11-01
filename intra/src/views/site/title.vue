@@ -1,7 +1,7 @@
 <template>
-  <v-toolbar-title>
+  <v-toolbar-title v-if="user">
     {{ title }}
-    <v-btn icon @click="openDialog"><v-icon>mdi-pencil</v-icon></v-btn>
+    <v-btn v-if="user.level < 1" icon @click="openDialog"><v-icon>mdi-pencil</v-icon></v-btn>
     <v-dialog v-model="dialog" max-width="400">
       <v-card>
         <v-card-title>
@@ -24,6 +24,11 @@ export default {
     return {
       dialog: false,
       text: this.title
+    }
+  },
+  computed: {
+    user () {
+      return this.$store.state.user
     }
   },
   methods: {

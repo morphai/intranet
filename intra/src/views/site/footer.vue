@@ -1,8 +1,8 @@
 <template>
-  <v-footer app color="grey lighten-2" absolute :footer="footer">
+  <v-footer v-if="user" app color="grey lighten-2" absolute :footer="footer">
     <v-spacer></v-spacer>
     <div>&copy; {{ new Date().getFullYear() + ' ' + footer }}</div>
-    <v-btn icon @click="openDialog"><v-icon>mdi-pencil</v-icon></v-btn>
+    <v-btn v-if="user.level < 1" icon @click="openDialog"><v-icon>mdi-pencil</v-icon></v-btn>
     <v-dialog v-model="dialog" max-width="400">
       <v-card>
         <v-card-title>
@@ -25,6 +25,11 @@ export default {
     return {
       dialog: false,
       text: this.footer
+    }
+  },
+  computed: {
+    user () {
+      return this.$store.state.user
     }
   },
   methods: {

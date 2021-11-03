@@ -2,7 +2,7 @@
   <v-card>
     <v-toolbar color="primary" dark>
       <v-toolbar-title>
-        {{item.title}}
+        {{item.facilityName}}
       </v-toolbar-title>
       <v-spacer/>
       <v-btn @click="articleWrite" icon><v-icon>mdi-pencil</v-icon></v-btn>
@@ -69,3 +69,4 @@ export default {
   }
 }
 </script>
+<!-- display-production 다이얼로그 생성시 storage를 불러오지 못하고 e.split 에러가 나오는 경우 서버의 data를 지우고 다시 시작(문제점은 찾아야 함) -->

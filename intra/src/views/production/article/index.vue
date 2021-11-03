@@ -126,6 +126,7 @@ export default {
     openDialog (item) {
       this.selectedItem = item
       this.dialog = true
+      console.log(this.item)
     }
   }
 }

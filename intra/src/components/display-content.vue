@@ -45,6 +45,7 @@ export default {
   },
   mounted () {
     this.fetch()
+    console.log(this.content)
   },
   methods: {
     async fetch () {

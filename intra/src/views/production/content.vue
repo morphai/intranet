@@ -16,14 +16,18 @@
           <div class="text-right caption">수정일: {{info.updatedAt.toDate().toLocaleDateString()}}</div>
         </v-alert>
       </v-card-text>
-      <production-article :info="info" :document="document"></production-article>
+      <template>
+      <production-article v-if="document === 'machine-list'"  :info="info" :document="document"></production-article>
+      <production-package-article v-else-if="document === 'package'"  :info="info" :document="document"></production-package-article>
+      </template>
     </v-card>
   </v-container>
 </template>
 <script>
 import ProductionArticle from './article/index'
+import ProductionPackageArticle from './package/index'
 export default {
-  components: { ProductionArticle },
+  components: { ProductionArticle, ProductionPackageArticle },
   props: ['document'],
   data () {
     return {
@@ -66,6 +70,7 @@ export default {
     },
     async articleWrite () {
       this.$router.push({ path: this.$route.path + '/article-write', query: { articleId: '' } })
+      console.log(this.$route.path)
     }
   }
 }

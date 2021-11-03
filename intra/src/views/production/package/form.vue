@@ -5,13 +5,11 @@
         <v-toolbar color="primary" dark dense>
           <v-toolbar-title>게시판 글 작성</v-toolbar-title>
         <v-spacer/>
-        <v-btn icon @click="$router.push('/production/machine-list')"><v-icon>mdi-arrow-left</v-icon></v-btn>
+        <v-btn icon @click="$router.push('/production/package')"><v-icon>mdi-arrow-left</v-icon></v-btn>
         <v-btn icon @click="save" :disabled="!user"><v-icon>mdi-content-save</v-icon></v-btn>
         </v-toolbar>
         <v-card-text>
           <v-text-field v-model="form.facilityName" outlined label="설비명"></v-text-field>
-          <v-text-field v-model="form.modelName" outlined label="모델명"></v-text-field>
-          <v-text-field v-model="form.spec" outlined label="사양"></v-text-field>
           <v-text-field v-model="form.serialNo" outlined label="시리얼넘버"></v-text-field>
           <v-text-field v-model="form.maker" outlined label="제조사"></v-text-field>
           <v-text-field type="date" v-model="form.purchaseDate" outlined label="구매일자"></v-text-field>
@@ -38,8 +36,6 @@ export default {
     return {
       form: {
         facilityName: '',
-        modelName: '',
-        spec: '',
         serialNo: '',
         maker: '',
         purchaseDate: '',
@@ -78,8 +74,6 @@ export default {
       if (!this.exists) return
       const item = doc.data()
       this.form.facilityName = item.facilityName
-      this.form.modelName = item.modelName
-      this.form.spec = item.spec
       this.form.serialNo = item.serialNo
       this.form.maker = item.maker
       this.form.purchaseDate = item.purchaseDate
@@ -97,8 +91,6 @@ export default {
         const url = await sn.ref.getDownloadURL()
         const doc = {
           facilityName: this.form.facilityName,
-          modelName: this.form.modelName,
-          spec: this.form.spec,
           serialNo: this.form.serialNo,
           maker: this.form.maker,
           purchaseDate: this.form.purchaseDate,

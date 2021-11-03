@@ -8,7 +8,8 @@
   <production-index v-else-if="collection === 'production' && document === 'list'"></production-index>
   <production-content v-else-if="collection === 'production' && !action" :document="document"></production-content>
   <production-form v-else-if="collection === 'production' && action === 'production-write'" :document="document" :action="action"></production-form>
-  <Production-article-form v-else-if="collection === 'production' && action === 'article-write'" :document="document" :action="action"></Production-article-form>
+  <Production-article-form v-else-if="collection === 'production' && action === 'article-write' && document === 'machine-list'" :action="action"></Production-article-form>
+  <Production-package-form v-else-if="collection === 'production' && action === 'article-write' && document === 'package'" :action="action"></Production-package-form>
   <error-page v-else></error-page>
 </template>
 <script>
@@ -22,6 +23,7 @@ import ProductionIndex from './production/index'
 import ProductionContent from './production/content'
 import ProductionForm from './production/form'
 import ProductionArticleForm from './production/article/form'
+import ProductionPackageForm from './production/package/form'
 import ErrorPage from './error'
 export default {
   components: {
@@ -35,6 +37,7 @@ export default {
     ProductionContent,
     ProductionForm,
     ProductionArticleForm,
+    ProductionPackageForm,
     ErrorPage
   },
   computed: {

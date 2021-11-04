@@ -5,8 +5,8 @@
         <v-toolbar-title v-text="info.title"></v-toolbar-title>
       <v-spacer/>
       <template v-if="user">
-        <v-btn icon @click="write" :disabled="user.level === 2 || user.level === 3 || user.level === 4 || user.level === 5"><v-icon>mdi-pencil</v-icon></v-btn>
-        <v-btn icon @click="articleWrite" :disabled="user.level === 2 || user.level === 3 || user.level === 4 || user.level === 5"><v-icon>mdi-plus</v-icon></v-btn>
+        <v-btn icon @click="write" :disabled="user.level === 2 || user.level === 3"><v-icon>mdi-pencil</v-icon></v-btn>
+        <v-btn icon @click="articleWrite" :disabled="user.level === 2 || user.level === 3"><v-icon>mdi-plus</v-icon></v-btn>
       </template>
       </v-toolbar>
       <v-card-text v-if="info.createdAt">
@@ -17,15 +17,17 @@
         </v-alert>
       </v-card-text>
       <template>
-      <production-article :info="info" :document="document"></production-article>
+      <production-mlist v-if=" document === 'machine-list'" :info="info" :document="document"></production-mlist>
+      <production-package v-if=" document === 'package'" :info="info" :document="document"></production-package>
       </template>
     </v-card>
   </v-container>
 </template>
 <script>
-import ProductionArticle from './article/index'
+import ProductionMlist from './mlist/index'
+import ProductionPackage from './package/index'
 export default {
-  components: { ProductionArticle },
+  components: { ProductionMlist, ProductionPackage },
   props: ['document'],
   data () {
     return {

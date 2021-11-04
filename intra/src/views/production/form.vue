@@ -72,7 +72,7 @@ export default {
           form.count = 0
           await this.ref.set(form)
         } else {
-          this.ref.update(form)
+          await this.ref.update(form)
         }
         this.$router.push('/production/' + this.document)
       } finally {

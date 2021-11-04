@@ -5,7 +5,7 @@
         <v-toolbar color="primary" dark dense>
           <v-toolbar-title>게시판 글 작성</v-toolbar-title>
         <v-spacer/>
-        <v-btn icon @click="$router.push('/board/' + document)"><v-icon>mdi-arrow-left</v-icon></v-btn>
+        <v-btn icon @click="$router.push('/quality/' + document)"><v-icon>mdi-arrow-left</v-icon></v-btn>
         <v-btn icon @click="save" :disabled="!user"><v-icon>mdi-content-save</v-icon></v-btn>
         </v-toolbar>
         <v-card-text>
@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     async fetch () {
-      this.ref = this.$firebase.firestore().collection('boards').doc(this.document)
+      this.ref = this.$firebase.firestore().collection('quality').doc(this.document)
       if (!this.articleId) return
       const doc = await this.ref.collection('articles').doc(this.articleId).get()
       this.exists = doc.exists
@@ -75,7 +75,7 @@ export default {
         const createdAt = new Date()
         const id = createdAt.getTime().toString()
         const md = this.$refs.editor.invoke('getMarkdown')
-        const sn = await this.$firebase.storage().ref().child('boards').child(this.document).child(id + '.md').putString(md)
+        const sn = await this.$firebase.storage().ref().child('quality').child(this.document).child(id + '.md').putString(md)
         const url = await sn.ref.getDownloadURL()
         const doc = {
           title: this.form.title,
@@ -103,9 +103,9 @@ export default {
         // 업데이트시 storage에 md파일이 overwrite되지 않아 강제적으로 기존 md파일(articleId)을 삭제
         //  그러나 update할 경우 다른 아이디가 생성되고, 다시 삭제하면 처음 아이디가 삭제할 곳을 잃어버림. 보류
         // console.log(this.articleId)
-        // await this.$firebase.storage().ref().child('boards').child(this.document).child(this.articleId + '.md').delete()
+        // await this.$firebase.storage().ref().child('quality').child(this.document).child(this.articleId + '.md').delete()
         this.loading = false
-        this.$router.push('/board/' + this.document)
+        this.$router.push('/quality/' + this.document)
       }
     }
   }

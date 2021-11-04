@@ -16,14 +16,14 @@
           <div class="text-right caption">수정일: {{info.updatedAt.toDate().toLocaleDateString()}}</div>
         </v-alert>
       </v-card-text>
-      <board-article :info="info" :document="document"></board-article>
+      <quality-article :info="info" :document="document"></quality-article>
     </v-card>
   </v-container>
 </template>
 <script>
-import BoardArticle from './article/index'
+import QualityArticle from './article/index'
 export default {
-  components: { BoardArticle },
+  components: { QualityArticle },
   props: ['document'],
   data () {
     return {
@@ -55,14 +55,14 @@ export default {
   methods: {
     subscribe () {
       if (this.unsubscribe) this.unsubscribe()
-      const ref = this.$firebase.firestore().collection('boards').doc(this.document)
+      const ref = this.$firebase.firestore().collection('quality').doc(this.document)
       this.unsubscribe = ref.onSnapshot(doc => {
         if (!doc.exists) return this.write()
         this.info = doc.data()
       })
     },
     async write () {
-      this.$router.push(this.$route.path + '/board-write')
+      this.$router.push(this.$route.path + '/quality-write')
     },
     async articleWrite () {
       this.$router.push({ path: this.$route.path + '/article-write', query: { articleId: '' } })

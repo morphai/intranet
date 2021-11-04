@@ -5,7 +5,7 @@
         :src="require('../assets/intro-img.svg')"
         class="my-3"
         contain
-        height="500"
+        height="300"
       />
     </v-col>
     <v-col class="mt-3 text-center" >

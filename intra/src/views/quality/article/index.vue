@@ -24,7 +24,7 @@
 
     </v-data-table>
     <v-dialog v-if="selectedItem" v-model="dialog">
-      <display-content :document="document" :item="selectedItem" @close="dialog=false"></display-content>
+      <display-quality :document="document" :item="selectedItem" @close="dialog=false"></display-quality>
     </v-dialog>
   </div>
 </template>
@@ -32,9 +32,9 @@
 import { head, last } from 'lodash'
 import DisplayTime from '@/components/display-time'
 import DisplayUser from '@/components/display-user'
-import DisplayContent from '@/components/display-content'
+import DisplayQuality from '@/components/display-quality'
 export default {
-  components: { DisplayTime, DisplayUser, DisplayContent },
+  components: { DisplayTime, DisplayUser, DisplayQuality },
   props: ['info', 'document'],
   data () {
     return {
@@ -92,7 +92,7 @@ export default {
       const order = this.options.sortBy[0]
       const sort = this.options.sortDesc[0] ? 'desc' : 'asc'
       const limit = this.options.itemsPerPage
-      const ref = this.$firebase.firestore().collection('boards').doc(this.document).collection('articles').orderBy(order, sort)
+      const ref = this.$firebase.firestore().collection('quality').doc(this.document).collection('articles').orderBy(order, sort)
       let query
       switch (arrow) {
         case -1: query = ref.endBefore(head(this.docs)).limitToLast(limit)

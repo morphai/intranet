@@ -17,17 +17,15 @@
         </v-alert>
       </v-card-text>
       <template>
-      <production-article v-if="document === 'machine-list'"  :info="info" :document="document"></production-article>
-      <production-package-article v-else-if="document === 'package'"  :info="info" :document="document"></production-package-article>
+      <production-article :info="info" :document="document"></production-article>
       </template>
     </v-card>
   </v-container>
 </template>
 <script>
 import ProductionArticle from './article/index'
-import ProductionPackageArticle from './package/index'
 export default {
-  components: { ProductionArticle, ProductionPackageArticle },
+  components: { ProductionArticle },
   props: ['document'],
   data () {
     return {

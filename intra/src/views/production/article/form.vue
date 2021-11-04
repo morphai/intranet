@@ -5,7 +5,7 @@
         <v-toolbar color="primary" dark dense>
           <v-toolbar-title>게시판 글 작성</v-toolbar-title>
         <v-spacer/>
-        <v-btn icon @click="$router.push('/production/machine-list')"><v-icon>mdi-arrow-left</v-icon></v-btn>
+        <v-btn icon @click="$router.push('/production/' + document)"><v-icon>mdi-arrow-left</v-icon></v-btn>
         <v-btn icon @click="save" :disabled="!user"><v-icon>mdi-content-save</v-icon></v-btn>
         </v-toolbar>
         <v-card-text>

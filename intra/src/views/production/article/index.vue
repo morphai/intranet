@@ -24,7 +24,7 @@
 
     </v-data-table>
     <v-dialog v-if="selectedItem" v-model="dialog">
-      <display-production :document="document" :item="selectedItem" @close="dialog=false"></display-production>
+      <display-mlist :document="document" :item="selectedItem" @close="dialog=false"></display-mlist>
     </v-dialog>
   </div>
 </template>
@@ -32,9 +32,9 @@
 import { head, last } from 'lodash'
 import DisplayTime from '@/components/display-time'
 import DisplayUser from '@/components/display-user'
-import DisplayProduction from '@/components/display-production'
+import DisplayMlist from '@/components/production/display-mlist'
 export default {
-  components: { DisplayTime, DisplayUser, DisplayProduction },
+  components: { DisplayTime, DisplayUser, DisplayMlist },
   props: ['info', 'document'],
   data () {
     return {
@@ -88,6 +88,7 @@ export default {
   },
   created () {
     // this.subscribe(0)
+    console.log(this.document)
   },
   destroyed () {
     if (this.unsubscribe) this.unsubscribe()

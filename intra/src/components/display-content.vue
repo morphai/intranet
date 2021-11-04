@@ -66,6 +66,7 @@ export default {
       await batch.commit()
       await this.$firebase.storage().ref().child('boards').child(this.document).child(this.item.id + '.md').delete()
       this.$emit('close')
+      console.log(this.item.id)
     }
   }
 }

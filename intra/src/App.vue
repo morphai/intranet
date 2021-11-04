@@ -12,9 +12,9 @@
     <v-navigation-drawer color="grey lighten-2" app v-model="drawer" width="300">
       <site-menu :items="site.menu"></site-menu>
     </v-navigation-drawer>
-    <v-content>
+    <v-main>
       <router-view />
-    </v-content>
+    </v-main>
     <site-footer  :footer="site.footer"></site-footer>
   </v-app>
 </template>

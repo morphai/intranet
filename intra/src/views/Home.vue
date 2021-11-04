@@ -1,5 +1,5 @@
 <template>
-  <v-content>
+  <v-main>
     <v-col cols="12">
       <v-img
         :src="require('../assets/intro-img.svg')"
@@ -10,7 +10,7 @@
     </v-col>
     <v-col class="mt-3 text-center" >
         <h1 class="grey--text font-weight-medium mb-10">
-          Welcome to Shinwhaintech
+          Shinwhaintech Database
         </h1>
 
         <p class="subheading font-weight-regular">
@@ -21,7 +21,7 @@
     <v-col class="mt-1 text-center">
       <v-btn rounded color="primary" dark large class="my-2">우측 상단에 로그인 하세요</v-btn>
     </v-col>
-  </v-content>
+  </v-main>
 </template>
 
 <script>

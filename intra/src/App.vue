@@ -59,8 +59,8 @@ export default {
             ]
           }
         ],
-        title: 'title 입니다.',
-        footer: 'footer 입니다.'
+        title: 'Intranet',
+        footer: 'Shinwhaintech Co.,Ltd'
       }
     }
   },

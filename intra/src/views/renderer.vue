@@ -5,7 +5,6 @@
   <board-article-form v-else-if="collection === 'board' && action === 'article-write'" :document="document" :action="action"></board-article-form>
   <page-index v-else-if="collection === 'page' && document === 'list'"></page-index>
   <page-content v-else-if="collection === 'page'" :document="document"></page-content>
-  <production-index v-else-if="collection === 'production' && document === 'list'"></production-index>
   <production-content v-else-if="collection === 'production' && !action" :document="document"></production-content>
   <production-form v-else-if="collection === 'production' && action === 'production-write'" :document="document" :action="action"></production-form>
   <Production-mlist-form v-else-if="collection === 'production' && action === 'article-write' && document === 'machine-list'" :document= "document" :action="action"></Production-mlist-form>
@@ -19,7 +18,6 @@ import BoardForm from './board/form'
 import BoardArticleForm from './board/article/form'
 import PageIndex from './page/index'
 import PageContent from './page/content'
-import ProductionIndex from './production/index'
 import ProductionContent from './production/content'
 import ProductionForm from './production/form'
 import ProductionMlistForm from './production/mlist/form'
@@ -33,7 +31,6 @@ export default {
     BoardArticleForm,
     PageIndex,
     PageContent,
-    ProductionIndex,
     ProductionContent,
     ProductionForm,
     ProductionMlistForm,

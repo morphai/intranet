@@ -9,7 +9,7 @@
       <v-btn @click="remove" icon><v-icon>mdi-delete</v-icon></v-btn>
       <v-btn @click="$emit('close')" icon><v-icon>mdi-close</v-icon></v-btn>
     </v-toolbar>
-    <v-card-text >
+    <v-card-text class="mt-5">
       <viewer v-if="content" :initialValue="content"></viewer>
       <v-container v-else>
         <v-row justify="center" align="center">
@@ -17,15 +17,16 @@
         </v-row>
       </v-container>
     </v-card-text>
+    <v-divider></v-divider>
     <v-card-actions>
       <v-spacer/>
-      <span class="font-italic caption">
+      <span class="caption">
         작성일: <display-time :time="item.createdAt"></display-time>
       </span>
     </v-card-actions>
     <v-card-actions>
       <v-spacer/>
-      <span class="font-italic caption">
+      <span class="caption">
         수정일: <display-time :time="item.updatedAt"></display-time>
       </span>
     </v-card-actions>

@@ -1,7 +1,7 @@
 <template>
   <v-footer app color="grey lighten-2" absolute :footer="footer">
     <v-spacer></v-spacer>
-    <div>&copy; {{ new Date().getFullYear() + ' ' + footer }}</div>
+    <div class="font-weight-thin">&copy; {{ new Date().getFullYear() + ' ' + footer }}</div>
     <template v-if="user">
       <v-btn v-if="user.level < 1" icon @click="openDialog"><v-icon>mdi-pencil</v-icon></v-btn>
     </template>

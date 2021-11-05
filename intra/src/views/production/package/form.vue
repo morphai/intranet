@@ -81,7 +81,8 @@ export default {
         const createdAt = new Date()
         const id = createdAt.getTime().toString()
         const md = this.$refs.editor.invoke('getMarkdown')
-        const sn = await this.$firebase.storage().ref().child('production').child(this.document).child(id + '.md').putString(md)
+        const sn = await this.$firebase.storage().ref().child('production').child(this.document).child(!this.articleId ? id + '.md' : this.articleId + '.md').putString(md)
+        // storage overwrite 불가 문제로 삼항 연산자 적용 (추후 동작 확인필요)
         const url = await sn.ref.getDownloadURL()
         const doc = {
           facilityName: this.form.facilityName,

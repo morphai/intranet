@@ -75,7 +75,7 @@
         </v-list-item-content>
       </v-list-item>
     </v-list>
-    <v-dialog v-model="dialogItem" max-width="400">
+    <v-dialog v-model="dialogItem" max-width="350">
       <v-card>
         <v-card-title>
           메인 아이템 수정

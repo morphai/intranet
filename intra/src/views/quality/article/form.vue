@@ -75,7 +75,8 @@ export default {
         const createdAt = new Date()
         const id = createdAt.getTime().toString()
         const md = this.$refs.editor.invoke('getMarkdown')
-        const sn = await this.$firebase.storage().ref().child('quality').child(this.document).child(id + '.md').putString(md)
+        const sn = await this.$firebase.storage().ref().child('quality').child(this.document).child(!this.articleId ? id + '.md' : this.articleId + '.md').putString(md)
+        // storage overwrite 불가 문제로 삼항 연산자 적용 (추후 동작 확인필요)
         const url = await sn.ref.getDownloadURL()
         const doc = {
           title: this.form.title,
@@ -100,10 +101,7 @@ export default {
         }
         await batch.commit()
       } finally {
-        // 업데이트시 storage에 md파일이 overwrite되지 않아 강제적으로 기존 md파일(articleId)을 삭제
-        //  그러나 update할 경우 다른 아이디가 생성되고, 다시 삭제하면 처음 아이디가 삭제할 곳을 잃어버림. 보류
-        // console.log(this.articleId)
-        // await this.$firebase.storage().ref().child('quality').child(this.document).child(this.articleId + '.md').delete()
+        console.log(this.id)
         this.loading = false
         this.$router.push('/quality/' + this.document)
       }

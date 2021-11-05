@@ -4,10 +4,10 @@
       <v-toolbar color="primary" dark dense>
         <v-toolbar-title v-text="info.title"></v-toolbar-title>
       <v-spacer/>
-      <template v-if="user">
-        <v-btn icon @click="write"><v-icon>mdi-pencil</v-icon></v-btn>
-        <v-btn icon @click="articleWrite"><v-icon>mdi-plus</v-icon></v-btn>
-      </template>
+      <span v-if="user">
+        <v-btn v-if="user.level === 0 || user.level === 2" icon @click="write"><v-icon>mdi-pencil</v-icon></v-btn>
+        <v-btn v-if="user.level === 0 || user.level === 2" icon @click="articleWrite"><v-icon>mdi-plus</v-icon></v-btn>
+      </span>
       </v-toolbar>
       <v-card-text v-if="info.createdAt">
         <v-alert border="top" type="info" colored-border elevation="2" dismissible>

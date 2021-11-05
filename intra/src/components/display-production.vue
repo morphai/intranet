@@ -5,9 +5,11 @@
         {{item.facilityName}}
       </v-toolbar-title>
       <v-spacer/>
-      <v-btn @click="articleWrite" icon><v-icon>mdi-pencil</v-icon></v-btn>
-      <v-btn @click="remove" icon><v-icon>mdi-delete</v-icon></v-btn>
-      <v-btn @click="$emit('close')" icon><v-icon>mdi-close</v-icon></v-btn>
+      <span v-if="user">
+        <v-btn v-if="user.level === 0 || user.level === 2" @click="articleWrite" icon><v-icon>mdi-pencil</v-icon></v-btn>
+        <v-btn v-if="user.level === 0 || user.level === 2" @click="remove" icon><v-icon>mdi-delete</v-icon></v-btn>
+        <v-btn @click="$emit('close')" icon><v-icon>mdi-close</v-icon></v-btn>
+      </span>
     </v-toolbar>
     <v-card-text class="mt-5">
       <viewer v-if="content" :initialValue="content"></viewer>
@@ -42,6 +44,11 @@ export default {
     return {
       content: '',
       ref: this.$firebase.firestore().collection('production').doc(this.document)
+    }
+  },
+  computed: {
+    user () {
+      return this.$store.state.user
     }
   },
   mounted () {

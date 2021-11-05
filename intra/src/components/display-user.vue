@@ -33,7 +33,7 @@ export default {
   approvedLevel
   admin= 0,
   quality = 1,
-  sales = 2,
-  production = 3,
-  rnd = 4
+  production = 2,
+  rnd = 3,
+  sales = 4
 -->

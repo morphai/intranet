@@ -30,7 +30,7 @@ export default {
 </script>
 
 <!--
-  email.level
+  approvedLevel
   admin= 0,
   quality = 1,
   sales = 2,

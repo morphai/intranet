@@ -5,8 +5,8 @@
         <v-toolbar-title v-text="info.title"></v-toolbar-title>
       <v-spacer/>
       <template v-if="user">
-        <v-btn icon @click="write" :disabled="user.level === 2 || user.level === 3"><v-icon>mdi-pencil</v-icon></v-btn>
-        <v-btn icon @click="articleWrite" :disabled="user.level === 2 || user.level === 3"><v-icon>mdi-plus</v-icon></v-btn>
+        <v-btn icon @click="write"><v-icon>mdi-pencil</v-icon></v-btn>
+        <v-btn icon @click="articleWrite"><v-icon>mdi-plus</v-icon></v-btn>
       </template>
       </v-toolbar>
       <v-card-text v-if="info.createdAt">

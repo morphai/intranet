@@ -15,18 +15,18 @@
     <v-main>
       <router-view />
     </v-main>
-    <site-footer  :footer="site.footer"></site-footer>
+    <!-- <site-footer  :footer="site.footer"></site-footer> -->
   </v-app>
 </template>
 
 <script>
 
 import siteTitle from '@/views/site/title'
-import siteFooter from '@/views/site/footer'
+// import siteFooter from '@/views/site/footer'
 import siteMenu from '@/views/site/menu'
 import siteSign from '@/views/site/sign'
 export default {
-  components: { siteTitle, siteFooter, siteMenu, siteSign },
+  components: { siteTitle, siteMenu, siteSign }, // siteFooter 제외
   name: 'App',
   data () {
     return {

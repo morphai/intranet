@@ -2,14 +2,19 @@
   <v-app>
     <v-app-bar
       app
-      color="grey lighten-2"
     >
+      <v-switch
+        v-model="$vuetify.theme.dark"
+        hint="Dark mode"
+        inset
+        persistent-hint
+      ></v-switch>
       <v-app-bar-nav-icon @click="drawer = !drawer" />
       <site-title :title="site.title"></site-title>
       <v-spacer />
       <site-sign></site-sign>
     </v-app-bar>
-    <v-navigation-drawer color="grey lighten-2" app v-model="drawer" width="300">
+    <v-navigation-drawer app v-model="drawer" width="300">
       <site-menu :items="site.menu"></site-menu>
     </v-navigation-drawer>
     <v-main>

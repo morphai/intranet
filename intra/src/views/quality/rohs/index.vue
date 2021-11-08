@@ -12,19 +12,22 @@
       must-sort
       item-key="id"
     >
+      <template v-slot:item.title="{item}">
+        <a @click="openDialog(item)">{{item.title}}</a>
+      </template>
       <template v-slot:item.createdAt="{item}">
         <display-time :time="item.createdAt"></display-time>
       </template>
-      <template v-slot:item.title="{item}">
-        <a @click="openDialog(item)">{{item.title}}</a>
+      <template v-slot:item.dataSheet="{item}">
+        <v-chip color="green" text-color="white" icon :href="item.dataSheet" target="_blank"><v-icon left>mdi-file</v-icon>DataSheet</v-chip>
       </template>
       <template v-slot:item.user.displayName="{item}">
         <display-user :user="item.user"></display-user>
       </template>
 
     </v-data-table>
-    <v-dialog v-if="selectedItem" v-model="dialog">
-      <display-quality :document="document" :item="selectedItem" @close="dialog=false"></display-quality>
+    <v-dialog v-if="selectedItem" v-model="dialog" max-width="1000">
+      <display-quality-firestore :document="document" :item="selectedItem" @close="dialog=false"></display-quality-firestore>
     </v-dialog>
   </div>
 </template>
@@ -32,18 +35,24 @@
 import { head, last } from 'lodash'
 import DisplayTime from '@/components/display-time'
 import DisplayUser from '@/components/display-user'
-import DisplayQuality from '@/components/display-quality'
+import DisplayQualityFirestore from '@/components/display-quality-firestore'
 export default {
-  components: { DisplayTime, DisplayUser, DisplayQuality },
+  components: { DisplayTime, DisplayUser, DisplayQualityFirestore },
   props: ['info', 'document'],
   data () {
     return {
       headers: [
-        { value: 'createdAt', text: '작성일' },
-        { value: 'title', text: '문서명' },
-        { value: 'docNo', text: '문서번호' },
+        { value: 'title', text: 'Maker' },
+        { value: 'grade', text: 'Grade' },
+        { value: 'color', text: 'Color' },
+        { value: 'category', text: 'category' },
+        { value: 'issueDate', text: '발행일자' },
+        { value: 'expirationDate', text: '유효일자' },
+        { value: 'certificationAuth', text: '발행기관' },
+        { value: 'dataSheet', text: 'Data Sheet' },
         { value: 'user.displayName', text: '작성자' },
-        { value: 'readCount', text: '조회수' }
+        { value: 'readCount', text: '조회수' },
+        { value: 'createdAt', text: '작성일' }
         // { value: 'commentCount', text: '댓글' }
       ],
       items: [],
@@ -83,6 +92,7 @@ export default {
   },
   created () {
     // this.subscribe(0)
+    console.log(this.document)
   },
   destroyed () {
     if (this.unsubscribe) this.unsubscribe()
@@ -121,6 +131,7 @@ export default {
     openDialog (item) {
       this.selectedItem = item
       this.dialog = true
+      console.log(this.item)
     }
   }
 }

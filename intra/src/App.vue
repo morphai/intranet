@@ -3,15 +3,16 @@
     <v-app-bar
       app
     >
+      <v-app-bar-nav-icon @click="drawer = !drawer" />
+      <site-title :title="site.title"></site-title>
+      <v-spacer />
       <v-switch
         v-model="$vuetify.theme.dark"
         hint="Dark mode"
         inset
         persistent-hint
       ></v-switch>
-      <v-app-bar-nav-icon @click="drawer = !drawer" />
-      <site-title :title="site.title"></site-title>
-      <v-spacer />
+      <!-- title로 이전필요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
       <site-sign></site-sign>
     </v-app-bar>
     <v-navigation-drawer app v-model="drawer" width="300">

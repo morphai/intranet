@@ -16,14 +16,16 @@
           <div class="text-right caption">수정일: {{info.updatedAt.toDate().toLocaleDateString()}}</div>
         </v-alert>
       </v-card-text>
-      <quality-article :info="info" :document="document"></quality-article>
+      <quality-article v-if=" document === 'iso'" :info="info" :document="document"></quality-article>
+      <quality-rohs v-if=" document === 'rohs'" :info="info" :document="document"></quality-rohs>
     </v-card>
   </v-container>
 </template>
 <script>
 import QualityArticle from './article/index'
+import QualityRohs from './rohs/index'
 export default {
-  components: { QualityArticle },
+  components: { QualityArticle, QualityRohs },
   props: ['document'],
   data () {
     return {

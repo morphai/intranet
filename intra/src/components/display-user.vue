@@ -16,7 +16,7 @@
     </template>
     <span v-if="user.email == 'justice0408@gmail.com'">khkim@shinwhaintec.co.kr | 010-7105-4882</span>
     <span v-else-if="user.email == 'daniel.kim7x@gmail.com'">khkim@shinwhaintec.co.kr | 010-7105-4882</span>
-    <span v-else-if="user.email == 'neokyj72@gmail.com.com'">yjkim@shinwhaintec.co.kr | 010-2752-0378</span>
+    <span v-else-if="user.email == 'neokyj72@gmail.com'">yjkim@shinwhaintec.co.kr | 010-2752-0378</span>
     <span v-else-if="user.email == 'alswjd37018407@gmail.com'">xxx@shinwhaintec.co.kr | 010-3701-8407</span>
     <span v-else-if="user.email == 'soulsorter@gmail.com'">dchan@shinwhaintec.co.kr | 010-9998-9834</span>
     <span v-else-if="user.email == 'jgh208011@gmail.com'">xxx@shinwhaintec.co.kr | 010-3821-3299</span>

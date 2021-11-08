@@ -1,7 +1,8 @@
 <template>
   <quality-content v-if="collection === 'quality' && !action" :document="document"></quality-content>
   <quality-form v-else-if="collection === 'quality' && action === 'quality-write'" :document="document" :action="action"></quality-form>
-  <quality-article-form v-else-if="collection === 'quality' && action === 'article-write'" :document="document" :action="action"></quality-article-form>
+  <quality-article-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'iso'" :document="document" :action="action"></quality-article-form>
+  <quality-rohs-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'rohs'" :document="document" :action="action"></quality-rohs-form>
   <production-content v-else-if="collection === 'production' && !action" :document="document"></production-content>
   <production-form v-else-if="collection === 'production' && action === 'production-write'" :document="document" :action="action"></production-form>
   <Production-mlist-form v-else-if="collection === 'production' && action === 'article-write' && document === 'machine-list'" :document= "document" :action="action"></Production-mlist-form>
@@ -12,6 +13,7 @@
 import QualityContent from './quality/content'
 import QualityForm from './quality/form'
 import QualityArticleForm from './quality/article/form'
+import QualityRohsForm from './quality/rohs/form'
 import ProductionContent from './production/content'
 import ProductionForm from './production/form'
 import ProductionMlistForm from './production/mlist/form'
@@ -22,6 +24,7 @@ export default {
     QualityContent,
     QualityForm,
     QualityArticleForm,
+    QualityRohsForm,
     ProductionContent,
     ProductionForm,
     ProductionMlistForm,

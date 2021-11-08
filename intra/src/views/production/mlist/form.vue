@@ -9,12 +9,12 @@
         <v-btn icon @click="save" :disabled="!user"><v-icon>mdi-content-save</v-icon></v-btn>
         </v-toolbar>
         <v-card-text>
-          <v-text-field v-model="form.facilityName" outlined label="설비명"></v-text-field>
-          <v-text-field v-model="form.modelName" outlined label="모델명"></v-text-field>
-          <v-text-field v-model="form.spec" outlined label="사양"></v-text-field>
-          <v-text-field v-model="form.serialNo" outlined label="시리얼넘버"></v-text-field>
-          <v-text-field v-model="form.maker" outlined label="제조사"></v-text-field>
-          <v-text-field type="date" v-model="form.purchaseDate" outlined label="구매일자"></v-text-field>
+          <v-text-field v-model="form.facilityName" outlined label="설비명" required></v-text-field>
+          <v-text-field v-model="form.modelName" outlined label="모델명" required></v-text-field>
+          <v-text-field v-model="form.spec" outlined label="사양" required></v-text-field>
+          <v-text-field v-model="form.serialNo" outlined label="시리얼넘버" required></v-text-field>
+          <v-text-field v-model="form.maker" outlined label="제조사" required></v-text-field>
+          <v-text-field type="date" v-model="form.purchaseDate" outlined label="구매일자" required></v-text-field>
           <v-text-field v-model="form.remark" outlined label="비고"></v-text-field>
           <editor v-if="!articleId" :initialValue="form.content" ref="editor" initialEditType="wysiwyg" height="650px" :options="{ hideModeSwitch: true}"></editor>
           <template v-else>

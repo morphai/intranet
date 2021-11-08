@@ -9,7 +9,7 @@
         <v-btn icon @click="save" :disabled="!user"><v-icon>mdi-content-save</v-icon></v-btn>
         </v-toolbar>
         <v-card-text>
-          <v-text-field v-model="form.title" outlined label="모델명" required></v-text-field>
+          <v-text-field v-model="form.title" outlined label="제목" required></v-text-field>
           <v-text-field type="date" v-model="form.updateDate" outlined label="등록일자" required></v-text-field>
           <v-text-field v-model="form.dataSheet" outlined label="File"> required</v-text-field>
         </v-card-text>

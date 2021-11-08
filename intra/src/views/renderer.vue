@@ -6,7 +6,9 @@
   <production-content v-else-if="collection === 'production' && !action" :document="document"></production-content>
   <production-form v-else-if="collection === 'production' && action === 'production-write'" :document="document" :action="action"></production-form>
   <Production-mlist-form v-else-if="collection === 'production' && action === 'article-write' && document === 'machine-list'" :document= "document" :action="action"></Production-mlist-form>
+  <Production-plan-form v-else-if="collection === 'production' && action === 'article-write' && document === 'plan'" :document= "document" :action="action"></Production-plan-form>
   <Production-package-form v-else-if="collection === 'production' && action === 'article-write' && document === 'package'" :document= "document" :action="action"></Production-package-form>
+  <Production-worksheet-form v-else-if="collection === 'production' && action === 'article-write' && document === 'worksheet'" :document= "document" :action="action"></Production-worksheet-form>
   <error-page v-else></error-page>
 </template>
 <script>
@@ -17,7 +19,9 @@ import QualityRohsForm from './quality/rohs/form'
 import ProductionContent from './production/content'
 import ProductionForm from './production/form'
 import ProductionMlistForm from './production/mlist/form'
+import ProductionPlanForm from './production/plan/form'
 import ProductionPackageForm from './production/package/form'
+import ProductionWorksheetForm from './production/worksheet/form'
 import ErrorPage from './error'
 export default {
   components: {
@@ -28,7 +32,9 @@ export default {
     ProductionContent,
     ProductionForm,
     ProductionMlistForm,
+    ProductionPlanForm,
     ProductionPackageForm,
+    ProductionWorksheetForm,
     ErrorPage
   },
   computed: {

@@ -12,14 +12,11 @@
       must-sort
       item-key="id"
     >
-      <template v-slot:item.title="{item}">
-        <a @click="openDialog(item)">{{item.title}}</a>
-      </template>
       <template v-slot:item.createdAt="{item}">
         <display-time :time="item.createdAt"></display-time>
       </template>
-      <template v-slot:item.dataSheet="{item}">
-        <v-chip color="green" text-color="white" icon :href="item.dataSheet" target="_blank"><v-icon left>mdi-file</v-icon>DataSheet</v-chip>
+      <template v-slot:item.facilityName="{item}">
+        <a @click="openDialog(item)">{{item.facilityName}}</a>
       </template>
       <template v-slot:item.user.displayName="{item}">
         <display-user :user="item.user"></display-user>
@@ -27,7 +24,7 @@
 
     </v-data-table>
     <v-dialog v-if="selectedItem" v-model="dialog" max-width="1000">
-      <display-production-firestore :document="document" :item="selectedItem" @close="dialog=false"></display-production-firestore>
+      <display-production :document="document" :item="selectedItem" @close="dialog=false"></display-production>
     </v-dialog>
   </div>
 </template>
@@ -35,16 +32,15 @@
 import { head, last } from 'lodash'
 import DisplayTime from '@/components/display-time'
 import DisplayUser from '@/components/display-user'
-import DisplayProductionFirestore from '@/components/display-production-firestore'
+import DisplayProduction from '@/components/display-production'
 export default {
-  components: { DisplayTime, DisplayUser, DisplayProductionFirestore },
+  components: { DisplayTime, DisplayUser, DisplayProduction },
   props: ['info', 'document'],
   data () {
     return {
       headers: [
-        { value: 'title', text: '모델명' },
+        { value: 'facilityName', text: '제목' },
         { value: 'updateDate', text: '등록일자' },
-        { value: 'dataSheet', text: 'Data Sheet' },
         { value: 'user.displayName', text: '작성자' },
         { value: 'readCount', text: '조회수' },
         { value: 'createdAt', text: '작성일' }

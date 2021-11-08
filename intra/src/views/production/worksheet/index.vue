@@ -42,7 +42,7 @@ export default {
   data () {
     return {
       headers: [
-        { value: 'title', text: '모델명' },
+        { value: 'title', text: '생산일보' },
         { value: 'updateDate', text: '등록일자' },
         { value: 'dataSheet', text: 'Data Sheet' },
         { value: 'user.displayName', text: '작성자' },

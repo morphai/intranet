@@ -9,23 +9,32 @@
         <v-btn icon @click="save" :disabled="!user"><v-icon>mdi-content-save</v-icon></v-btn>
         </v-toolbar>
         <v-card-text>
-          <v-text-field v-model="form.title" outlined label="모델명" required></v-text-field>
+          <v-text-field v-model="form.facilityName" outlined label="제목" required></v-text-field>
           <v-text-field type="date" v-model="form.updateDate" outlined label="등록일자" required></v-text-field>
-          <v-text-field v-model="form.dataSheet" outlined label="File"> required</v-text-field>
+          <editor v-if="!articleId" :initialValue="form.content" ref="editor" initialEditType="wysiwyg" height="650px" :options="{ hideModeSwitch: true}"></editor>
+          <template v-else>
+            <editor v-if="form.content" :initialValue="form.content" ref="editor" initialEditType="wysiwyg" height="650px" :options="{ hideModeSwitch: true}"></editor>
+            <v-container v-else>
+              <v-row justify="center" align="center">
+                <v-progress-circular indeterminate></v-progress-circular>
+              </v-row>
+            </v-container>
+          </template>
         </v-card-text>
       </v-card>
     </v-form>
   </v-container>
 </template>
 <script>
+import axios from 'axios'
 export default {
   props: ['document', 'action'],
   data () {
     return {
       form: {
-        title: '',
+        facilityName: '',
         updateDate: '',
-        dataSheet: ''
+        content: ''
       },
       exists: false,
       loading: false,
@@ -58,20 +67,25 @@ export default {
       this.exists = doc.exists
       if (!this.exists) return
       const item = doc.data()
-      this.form.title = item.title
+      this.form.facilityName = item.facilityName
       this.form.updateDate = item.updateDate
-      this.form.dataSheet = item.dataSheet
+      const { data } = await axios.get(item.url)
+      this.form.content = data
     },
     async save () {
       this.loading = true
       try {
         const createdAt = new Date()
         const id = createdAt.getTime().toString()
+        const md = this.$refs.editor.invoke('getMarkdown')
+        const sn = await this.$firebase.storage().ref().child('production').child(this.document).child(!this.articleId ? id + '.md' : this.articleId + '.md').putString(md)
+        // storage overwrite 불가 문제로 삼항 연산자 적용 (추후 동작 확인필요)
+        const url = await sn.ref.getDownloadURL()
         const doc = {
-          title: this.form.title,
+          facilityName: this.form.facilityName,
           updateDate: this.form.updateDate,
-          dataSheet: this.form.dataSheet,
-          updatedAt: createdAt
+          updatedAt: createdAt,
+          url: url
         }
         const batch = await this.$firebase.firestore().batch()
         if (!this.articleId) {
@@ -98,4 +112,4 @@ export default {
   }
 }
 </script>
-<!-- maker를 타이틀로 변경(사유: display-production-firestore를 공용 title로 사용하기 위함) -->
+<!-- display-production을 사용하기 위해 불가피하게 title을 facilityName으로 처리함 -->

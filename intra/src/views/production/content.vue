@@ -18,16 +18,20 @@
       </v-card-text>
       <template>
       <production-mlist v-if=" document === 'machine-list'" :info="info" :document="document"></production-mlist>
+      <production-plan v-if=" document === 'plan'" :info="info" :document="document"></production-plan>
       <production-package v-if=" document === 'package'" :info="info" :document="document"></production-package>
+      <production-worksheet v-if=" document === 'worksheet'" :info="info" :document="document"></production-worksheet>
       </template>
     </v-card>
   </v-container>
 </template>
 <script>
 import ProductionMlist from './mlist/index'
+import ProductionPlan from './plan/index'
 import ProductionPackage from './package/index'
+import ProductionWorksheet from './worksheet/index'
 export default {
-  components: { ProductionMlist, ProductionPackage },
+  components: { ProductionMlist, ProductionPlan, ProductionPackage, ProductionWorksheet },
   props: ['document'],
   data () {
     return {

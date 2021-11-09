@@ -22,6 +22,7 @@
       <quality-qmr v-if=" document === 'qmr'" :info="info" :document="document"></quality-qmr>
       <quality-pqcsheet v-if=" document === 'pqcsheet'" :info="info" :document="document"></quality-pqcsheet>
       <quality-4m v-if=" document === '4m'" :info="info" :document="document"></quality-4m>
+      <quality-reliability v-if=" document === 'reliability'" :info="info" :document="document"></quality-reliability>
     </v-card>
   </v-container>
 </template>
@@ -32,8 +33,9 @@ import QualityNcr from './ncr/index'
 import QualityQmr from './qmr/index'
 import QualityPqcsheet from './pqcsheet/index'
 import Quality4m from './4m/index'
+import QualityReliability from './reliability/index'
 export default {
-  components: { QualityArticle, QualityRohs, QualityNcr, QualityQmr, QualityPqcsheet, Quality4m },
+  components: { QualityArticle, QualityRohs, QualityNcr, QualityQmr, QualityPqcsheet, Quality4m, QualityReliability },
   props: ['document'],
   data () {
     return {

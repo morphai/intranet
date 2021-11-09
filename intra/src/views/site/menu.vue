@@ -1,5 +1,5 @@
 <template>
-  <div v-if="user">
+  <div v-if="user" class="pb-n5">
     <v-list-item three-line>
       <v-list-item-content>
         <v-list-item-title class="title">
@@ -26,7 +26,7 @@
         :no-action="!$store.state.editable"
       >
         <template v-slot:activator>
-          <v-list-item-content>
+          <v-list-item-content class="ml-n5">
             <v-list-item-title>
               {{ item.title }}
               <span v-if="$store.state.editable && user.level < 1">
@@ -43,8 +43,9 @@
           v-for="(subItem, j) in item.subItems"
           :key="j"
           :to="$store.state.editable ? null : subItem.to"
+          style="margin-bottom: 0px"
         >
-          <v-list-item-content>
+          <v-list-item-content class="ml-n7 my-n8">
             <v-list-item-title :class="$store.state.editable ? 'pl-4':''">
               {{ subItem.title }}
               <span v-if="$store.state.editable && user.level < 1">

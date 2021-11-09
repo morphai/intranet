@@ -18,14 +18,16 @@
       </v-card-text>
       <quality-article v-if=" document === 'iso'" :info="info" :document="document"></quality-article>
       <quality-rohs v-if=" document === 'rohs'" :info="info" :document="document"></quality-rohs>
+      <quality-ncr v-if=" document === 'ncr'" :info="info" :document="document"></quality-ncr>
     </v-card>
   </v-container>
 </template>
 <script>
 import QualityArticle from './article/index'
 import QualityRohs from './rohs/index'
+import QualityNcr from './ncr/index'
 export default {
-  components: { QualityArticle, QualityRohs },
+  components: { QualityArticle, QualityRohs, QualityNcr },
   props: ['document'],
   data () {
     return {

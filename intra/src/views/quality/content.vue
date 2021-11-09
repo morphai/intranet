@@ -19,6 +19,9 @@
       <quality-article v-if=" document === 'iso'" :info="info" :document="document"></quality-article>
       <quality-rohs v-if=" document === 'rohs'" :info="info" :document="document"></quality-rohs>
       <quality-ncr v-if=" document === 'ncr'" :info="info" :document="document"></quality-ncr>
+      <quality-qmr v-if=" document === 'qmr'" :info="info" :document="document"></quality-qmr>
+      <quality-pqcsheet v-if=" document === 'pqcsheet'" :info="info" :document="document"></quality-pqcsheet>
+      <quality-4m v-if=" document === '4m'" :info="info" :document="document"></quality-4m>
     </v-card>
   </v-container>
 </template>
@@ -26,8 +29,11 @@
 import QualityArticle from './article/index'
 import QualityRohs from './rohs/index'
 import QualityNcr from './ncr/index'
+import QualityQmr from './qmr/index'
+import QualityPqcsheet from './pqcsheet/index'
+import Quality4m from './4m/index'
 export default {
-  components: { QualityArticle, QualityRohs, QualityNcr },
+  components: { QualityArticle, QualityRohs, QualityNcr, QualityQmr, QualityPqcsheet, Quality4m },
   props: ['document'],
   data () {
     return {

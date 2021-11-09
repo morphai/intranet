@@ -4,6 +4,9 @@
   <quality-article-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'iso'" :document="document" :action="action"></quality-article-form>
   <quality-rohs-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'rohs'" :document="document" :action="action"></quality-rohs-form>
   <quality-ncr-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'ncr'" :document="document" :action="action"></quality-ncr-form>
+  <quality-qmr-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'qmr'" :document="document" :action="action"></quality-qmr-form>
+  <quality-pqcsheet-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'pqcsheet'" :document="document" :action="action"></quality-pqcsheet-form>
+  <quality-4m-form v-else-if="collection === 'quality' && action === 'article-write' && document === '4m'" :document="document" :action="action"></quality-4m-form>
   <production-content v-else-if="collection === 'production' && !action" :document="document"></production-content>
   <production-form v-else-if="collection === 'production' && action === 'production-write'" :document="document" :action="action"></production-form>
   <Production-mlist-form v-else-if="collection === 'production' && action === 'article-write' && document === 'machine-list'" :document= "document" :action="action"></Production-mlist-form>
@@ -18,6 +21,9 @@ import QualityForm from './quality/form'
 import QualityArticleForm from './quality/article/form'
 import QualityRohsForm from './quality/rohs/form'
 import QualityNcrForm from './quality/ncr/form'
+import QualityQmrForm from './quality/qmr/form'
+import QualityPqcsheetForm from './quality/pqcsheet/form'
+import Quality4mForm from './quality/4m/form'
 import ProductionContent from './production/content'
 import ProductionForm from './production/form'
 import ProductionMlistForm from './production/mlist/form'
@@ -32,6 +38,9 @@ export default {
     QualityArticleForm,
     QualityRohsForm,
     QualityNcrForm,
+    QualityQmrForm,
+    QualityPqcsheetForm,
+    Quality4mForm,
     ProductionContent,
     ProductionForm,
     ProductionMlistForm,

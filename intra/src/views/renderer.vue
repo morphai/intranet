@@ -14,6 +14,9 @@
   <Production-plan-form v-else-if="collection === 'production' && action === 'article-write' && document === 'plan'" :document= "document" :action="action"></Production-plan-form>
   <Production-package-form v-else-if="collection === 'production' && action === 'article-write' && document === 'package'" :document= "document" :action="action"></Production-package-form>
   <Production-worksheet-form v-else-if="collection === 'production' && action === 'article-write' && document === 'worksheet'" :document= "document" :action="action"></Production-worksheet-form>
+  <rnd-content v-else-if="collection === 'rnd' && !action" :document="document"></rnd-content>
+  <rnd-form v-else-if="collection === 'rnd' && action === 'rnd-write'" :document="document" :action="action"></rnd-form>
+  <rnd-drawing-form v-else-if="collection === 'rnd' && action === 'article-write' && document === 'drawing'" :document= "document" :action="action"></rnd-drawing-form>
   <error-page v-else></error-page>
 </template>
 <script>
@@ -32,6 +35,9 @@ import ProductionMlistForm from './production/mlist/form'
 import ProductionPlanForm from './production/plan/form'
 import ProductionPackageForm from './production/package/form'
 import ProductionWorksheetForm from './production/worksheet/form'
+import RndContent from './rnd/content'
+import RndForm from './rnd/form'
+import RndDrawingForm from './rnd/drawing/form'
 import ErrorPage from './error'
 export default {
   components: {
@@ -50,6 +56,9 @@ export default {
     ProductionPlanForm,
     ProductionPackageForm,
     ProductionWorksheetForm,
+    RndContent,
+    RndForm,
+    RndDrawingForm,
     ErrorPage
   },
   computed: {

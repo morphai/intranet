@@ -19,10 +19,10 @@
         <display-time :time="item.createdAt"></display-time>
       </template>
       <template v-slot:item.dataSheet1="{item}">
-        <v-chip color="green" text-color="white" icon :href="item.dataSheet1" target="_blank"><v-icon left>mdi-file</v-icon>DataSheet</v-chip>
+        <v-chip color="primary" text-color="primary" outlined icon :href="item.dataSheet1" target="_blank"><v-icon>mdi-file-document-outline</v-icon></v-chip>
       </template>
       <template v-slot:item.dataSheet2="{item}">
-        <v-chip color="green" text-color="white" icon :href="item.dataSheet2" target="_blank"><v-icon left>mdi-file</v-icon>DataSheet</v-chip>
+        <v-chip color="primary" text-color="primary" outlined icon :href="item.dataSheet2" target="_blank"><v-icon>mdi-file-document-outline</v-icon></v-chip>
       </template>
       <template v-slot:item.user.displayName="{item}">
         <display-user :user="item.user"></display-user>

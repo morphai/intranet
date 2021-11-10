@@ -2,15 +2,30 @@
   <v-app>
     <v-app-bar
       app
+      dense
     >
       <v-app-bar-nav-icon @click="drawer = !drawer" />
-      <site-title :title="site.title"></site-title>
+      <v-btn class="ma-2" color="primary" rounded :href="'https://script.google.com/macros/s/AKfycby_1Yk3r1tGvsdE8MBrOM_M-Xn93UBzNOm5mOAsnQHnCRFu8vJtQQ3XZXjgjgOhGWnV/exec'" target="_blank">
+        PQC
+      </v-btn>
+      <v-btn class="ma-2" color="primary" rounded :href="'https://datastudio.google.com/reporting/f835e25b-4f9a-4ac1-bd7f-4fa1805aff7c/page/lL9DC'" target="_blank">
+        SPC
+      </v-btn>
+      <v-btn class="ma-2" color="primary" rounded :href="'https://login.ecount.com/Login/KR/'" target="_blank">
+        ERP
+      </v-btn>
       <v-spacer />
+      <!-- <site-title :title="site.title"></site-title> -->
+      <v-spacer />
+      <template v-if="user">
+        <v-icon left>mdi-account</v-icon>{{user.displayName}}
+        <v-icon left class="ml-4">mdi-email</v-icon>{{user.email}}
+      </template>
       <v-switch
+        color="red"
         v-model="$vuetify.theme.dark"
-        hint="Dark mode"
         inset
-        persistent-hint
+        class="ml-5 mr-4 mt-5"
       ></v-switch>
       <!-- title로 이전필요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
       <site-sign></site-sign>
@@ -27,12 +42,12 @@
 
 <script>
 
-import siteTitle from '@/views/site/title'
+// import siteTitle from '@/views/site/title'
 // import siteFooter from '@/views/site/footer'
 import siteMenu from '@/views/site/menu'
 import siteSign from '@/views/site/sign'
 export default {
-  components: { siteTitle, siteMenu, siteSign }, // siteFooter 제외
+  components: { siteMenu, siteSign }, // siteTitle, siteFooter 제외
   name: 'App',
   data () {
     return {
@@ -72,6 +87,11 @@ export default {
   },
   created () {
     this.subscribe()
+  },
+  computed: {
+    user () {
+      return this.$store.state.user
+    }
   },
   methods: {
     subscribe () {

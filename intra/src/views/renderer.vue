@@ -17,6 +17,9 @@
   <rnd-content v-else-if="collection === 'rnd' && !action" :document="document"></rnd-content>
   <rnd-form v-else-if="collection === 'rnd' && action === 'rnd-write'" :document="document" :action="action"></rnd-form>
   <rnd-drawing-form v-else-if="collection === 'rnd' && action === 'article-write' && document === 'drawing'" :document= "document" :action="action"></rnd-drawing-form>
+  <rnd-approval-form v-else-if="collection === 'rnd' && action === 'article-write' && document === 'approval'" :document= "document" :action="action"></rnd-approval-form>
+  <rnd-dfmea-form v-else-if="collection === 'rnd' && action === 'article-write' && document === 'dfmea'" :document= "document" :action="action"></rnd-dfmea-form>
+  <rnd-meeting-form v-else-if="collection === 'rnd' && action === 'article-write' && document === 'meeting'" :document= "document" :action="action"></rnd-meeting-form>
   <error-page v-else></error-page>
 </template>
 <script>
@@ -38,6 +41,9 @@ import ProductionWorksheetForm from './production/worksheet/form'
 import RndContent from './rnd/content'
 import RndForm from './rnd/form'
 import RndDrawingForm from './rnd/drawing/form'
+import RndApprovalForm from './rnd/approval/form'
+import RndDfmeaForm from './rnd/dfmea/form'
+import RndMeetingForm from './rnd/meeting/form'
 import ErrorPage from './error'
 export default {
   components: {
@@ -59,6 +65,9 @@ export default {
     RndContent,
     RndForm,
     RndDrawingForm,
+    RndApprovalForm,
+    RndDfmeaForm,
+    RndMeetingForm,
     ErrorPage
   },
   computed: {

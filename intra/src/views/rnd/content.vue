@@ -17,15 +17,19 @@
         </v-alert>
       </v-card-text>
       <rnd-drawing v-if=" document === 'drawing'" :info="info" :document="document"></rnd-drawing>
-      <!-- <quality-rohs v-if=" document === 'rohs'" :info="info" :document="document"></quality-rohs> -->
+      <rnd-approval v-if=" document === 'approval'" :info="info" :document="document"></rnd-approval>
+      <rnd-dfmea v-if=" document === 'dfmea'" :info="info" :document="document"></rnd-dfmea>
+      <rnd-meeting v-if=" document === 'meeting'" :info="info" :document="document"></rnd-meeting>
     </v-card>
   </v-container>
 </template>
 <script>
 import RndDrawing from './drawing/index'
-// import QualityRohs from './rohs/index'
+import RndApproval from './approval/index'
+import RndDfmea from './dfmea/index'
+import RndMeeting from './meeting/index'
 export default {
-  components: { RndDrawing },
+  components: { RndDrawing, RndApproval, RndDfmea, RndMeeting },
   props: ['document'],
   data () {
     return {

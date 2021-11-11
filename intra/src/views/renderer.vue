@@ -9,6 +9,7 @@
   <quality-4m-form v-else-if="collection === 'quality' && action === 'article-write' && document === '4m'" :document="document" :action="action"></quality-4m-form>
   <quality-reliability-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'reliability'" :document="document" :action="action"></quality-reliability-form>
   <quality-pfmea-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'pfmea'" :document="document" :action="action"></quality-pfmea-form>
+  <quality-certification-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'certification'" :document="document" :action="action"></quality-certification-form>
   <production-content v-else-if="collection === 'production' && !action" :document="document"></production-content>
   <production-form v-else-if="collection === 'production' && action === 'production-write'" :document="document" :action="action"></production-form>
   <Production-mlist-form v-else-if="collection === 'production' && action === 'article-write' && document === 'machine-list'" :document= "document" :action="action"></Production-mlist-form>
@@ -39,6 +40,7 @@ import QualityPqcsheetForm from './quality/pqcsheet/form'
 import Quality4mForm from './quality/4m/form'
 import QualityReliabilityForm from './quality/reliability/form'
 import QualityPfmeaForm from './quality/pfmea/form'
+import QualityCertificationForm from './quality/certification/form'
 import ProductionContent from './production/content'
 import ProductionForm from './production/form'
 import ProductionMlistForm from './production/mlist/form'
@@ -69,6 +71,7 @@ export default {
     Quality4mForm,
     QualityReliabilityForm,
     QualityPfmeaForm,
+    QualityCertificationForm,
     ProductionContent,
     ProductionForm,
     ProductionMlistForm,

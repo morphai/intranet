@@ -20,6 +20,11 @@
   <rnd-approval-form v-else-if="collection === 'rnd' && action === 'article-write' && document === 'approval'" :document= "document" :action="action"></rnd-approval-form>
   <rnd-dfmea-form v-else-if="collection === 'rnd' && action === 'article-write' && document === 'dfmea'" :document= "document" :action="action"></rnd-dfmea-form>
   <rnd-meeting-form v-else-if="collection === 'rnd' && action === 'article-write' && document === 'meeting'" :document= "document" :action="action"></rnd-meeting-form>
+  <mold-content v-else-if="collection === 'mold' && !action" :document="document"></mold-content>
+  <mold-form v-else-if="collection === 'mold' && action === 'mold-write'" :document="document" :action="action"></mold-form>
+  <mold-repair-form v-else-if="collection === 'mold' && action === 'article-write' && document === 'repair'" :document= "document" :action="action"></mold-repair-form>
+  <mold-tooling-form v-else-if="collection === 'mold' && action === 'article-write' && document === 'tooling'" :document= "document" :action="action"></mold-tooling-form>
+  <mold-shot-form v-else-if="collection === 'mold' && action === 'article-write' && document === 'shot'" :document= "document" :action="action"></mold-shot-form>
   <error-page v-else></error-page>
 </template>
 <script>
@@ -44,6 +49,11 @@ import RndDrawingForm from './rnd/drawing/form'
 import RndApprovalForm from './rnd/approval/form'
 import RndDfmeaForm from './rnd/dfmea/form'
 import RndMeetingForm from './rnd/meeting/form'
+import MoldContent from './mold/content'
+import MoldForm from './mold/form'
+import MoldRepairForm from './mold/repair/form'
+import MoldToolingForm from './mold/tooling/form'
+import MoldShotForm from './mold/shot/form'
 import ErrorPage from './error'
 export default {
   components: {
@@ -68,6 +78,11 @@ export default {
     RndApprovalForm,
     RndDfmeaForm,
     RndMeetingForm,
+    MoldContent,
+    MoldForm,
+    MoldRepairForm,
+    MoldToolingForm,
+    MoldShotForm,
     ErrorPage
   },
   computed: {

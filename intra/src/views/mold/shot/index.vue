@@ -15,11 +15,11 @@
       <template v-slot:item.title="{item}">
         <a @click="openDialog(item)">{{item.title}}</a>
       </template>
-      <template v-slot:item.createdAt="{item}">
-        <display-time :time="item.createdAt"></display-time>
-      </template>
       <template v-slot:item.dataSheet="{item}">
         <v-chip color="primary" text-color="primary" outlined icon :href="item.dataSheet" target="_blank"><v-icon>mdi-file-document-outline</v-icon></v-chip>
+      </template>
+      <template v-slot:item.createdAt="{item}">
+        <display-time :time="item.createdAt"></display-time>
       </template>
       <template v-slot:item.user.displayName="{item}">
         <display-user :user="item.user"></display-user>
@@ -27,7 +27,7 @@
 
     </v-data-table>
     <v-dialog v-if="selectedItem" v-model="dialog" max-width="1000">
-      <display-rnd-firestore :document="document" :item="selectedItem" @close="dialog=false"></display-rnd-firestore>
+      <display-mold-firestore :document="document" :item="selectedItem" @close="dialog=false"></display-mold-firestore>
     </v-dialog>
   </div>
 </template>
@@ -35,21 +35,16 @@
 import { head, last } from 'lodash'
 import DisplayTime from '@/components/display-time'
 import DisplayUser from '@/components/display-user'
-import DisplayRndFirestore from '@/components/display-rnd-firestore'
+import DisplayMoldFirestore from '@/components/display-mold-firestore'
 export default {
-  components: { DisplayTime, DisplayUser, DisplayRndFirestore },
+  components: { DisplayTime, DisplayUser, DisplayMoldFirestore },
   props: ['info', 'document'],
   data () {
     return {
       headers: [
-        { value: 'title', text: 'Model' },
-        { value: 'partName', text: 'Part Name' },
-        { value: 'partNo', text: 'Part No' },
-        { value: 'revNo', text: 'Rev No' },
-        { value: 'description', text: 'Description' },
-        { value: 'designer', text: '고객 담당자' },
+        { value: 'title', text: '제목' },
         { value: 'issueDate', text: '등록일자' },
-        { value: 'dataSheet', text: '2D 도면' },
+        { value: 'dataSheet', text: '문서' },
         { value: 'user.displayName', text: '작성자' },
         { value: 'readCount', text: '조회수' },
         { value: 'createdAt', text: '작성일' }
@@ -103,7 +98,7 @@ export default {
       const order = this.options.sortBy[0]
       const sort = this.options.sortDesc[0] ? 'desc' : 'asc'
       const limit = this.options.itemsPerPage
-      const ref = this.$firebase.firestore().collection('rnd').doc(this.document).collection('articles').orderBy(order, sort)
+      const ref = this.$firebase.firestore().collection('mold').doc(this.document).collection('articles').orderBy(order, sort)
       let query
       switch (arrow) {
         case -1: query = ref.endBefore(head(this.docs)).limitToLast(limit)

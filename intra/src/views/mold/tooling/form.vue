@@ -13,6 +13,7 @@
           <v-text-field v-model="form.title" outlined label="Model" required></v-text-field>
           <v-text-field v-model="form.partName" outlined label="Part Name" required></v-text-field>
           <v-text-field v-model="form.toolSeq" outlined label="금형차수" required></v-text-field>
+          <v-text-field v-model="form.cavity" outlined label="Cavity" required></v-text-field>
           <v-text-field v-model="form.toolNo" outlined label="금형번호" required></v-text-field>
           <v-text-field type="date" v-model="form.issueDate" outlined label="제작일자" required></v-text-field>
           <v-text-field v-model="form.location" outlined label="금형위치" required></v-text-field>
@@ -32,7 +33,8 @@ export default {
         title: '',
         partName: '',
         toolSeq: '',
-        toolNo: '',
+        cavity: '',
+        toolNo: 'SH',
         issueDate: '',
         location: '',
         rate: ''
@@ -72,6 +74,7 @@ export default {
       this.form.title = item.title
       this.form.partName = item.partName
       this.form.toolSeq = item.toolSeq
+      this.form.cavity = item.cavity
       this.form.toolNo = item.toolNo
       this.form.issueDate = item.issueDate
       this.form.location = item.location
@@ -87,6 +90,7 @@ export default {
           title: this.form.title,
           partName: this.form.partName,
           toolSeq: this.form.toolSeq,
+          cavity: this.form.cavity,
           toolNo: this.form.toolNo,
           issueDate: this.form.issueDate,
           location: this.form.location,

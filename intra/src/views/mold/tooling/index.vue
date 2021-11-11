@@ -43,6 +43,7 @@ export default {
         { value: 'title', text: 'Model' },
         { value: 'partName', text: 'Part Name' },
         { value: 'toolSeq', text: '금형차수' },
+        { value: 'cavity', text: 'Cavity' },
         { value: 'toolNo', text: '금형번호' },
         { value: 'issueDate', text: '제작일자' },
         { value: 'location', text: '금형위치' },

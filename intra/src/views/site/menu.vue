@@ -45,7 +45,7 @@
           :to="$store.state.editable ? null : subItem.to"
           style="margin-bottom: 0px"
         >
-          <v-list-item-content class="ml-n7 my-n8">
+          <v-list-item-content>
             <v-list-item-title :class="$store.state.editable ? 'pl-4':''">
               {{ subItem.title }}
               <span v-if="$store.state.editable && user.level < 1">

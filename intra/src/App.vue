@@ -37,7 +37,7 @@
       <!-- title로 이전필요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
       <site-sign></site-sign>
     </v-app-bar>
-    <v-navigation-drawer app v-model="drawer" width="300">
+    <v-navigation-drawer app dark v-model="drawer" width="300">
       <site-menu :items="site.menu"></site-menu>
     </v-navigation-drawer>
     <v-main>

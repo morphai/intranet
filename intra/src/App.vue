@@ -5,27 +5,34 @@
       dense
     >
       <v-app-bar-nav-icon @click="drawer = !drawer" />
-      <v-btn class="ma-2" color="primary" rounded :href="'https://script.google.com/macros/s/AKfycby_1Yk3r1tGvsdE8MBrOM_M-Xn93UBzNOm5mOAsnQHnCRFu8vJtQQ3XZXjgjgOhGWnV/exec'" target="_blank">
+      <v-btn class="ma-2" elevation="2" :href="'https://script.google.com/macros/s/AKfycby_1Yk3r1tGvsdE8MBrOM_M-Xn93UBzNOm5mOAsnQHnCRFu8vJtQQ3XZXjgjgOhGWnV/exec'" target="_blank">
         PQC
       </v-btn>
-      <v-btn class="ma-2" color="primary" rounded :href="'https://datastudio.google.com/reporting/f835e25b-4f9a-4ac1-bd7f-4fa1805aff7c/page/lL9DC'" target="_blank">
+      <v-btn class="ma-2" elevation="2" :href="'https://datastudio.google.com/reporting/f835e25b-4f9a-4ac1-bd7f-4fa1805aff7c/page/lL9DC'" target="_blank">
         SPC
       </v-btn>
-      <v-btn class="ma-2" color="primary" rounded :href="'https://login.ecount.com/Login/KR/'" target="_blank">
+      <v-btn class="ma-2" elevation="2" :href="'https://login.ecount.com/Login/KR/'" target="_blank">
         ERP
       </v-btn>
       <v-spacer />
       <!-- <site-title :title="site.title"></site-title> -->
       <v-spacer />
       <template v-if="user">
-        <v-icon left>mdi-account</v-icon>{{user.displayName}}
-        <v-icon left class="ml-4">mdi-email</v-icon>{{user.email}}
+        <v-icon left>mdi-card-account-details</v-icon>{{user.displayName}}
+        <v-icon left class="ml-5">mdi-email</v-icon>
+        <span v-if="user.email == 'justice0408@gmail.com'">khkim@shinwhaintec.co.kr</span>
+        <span v-else-if="user.email == 'daniel.kim7x@gmail.com'">khkim@shinwhaintec.co.kr</span>
+        <span v-else-if="user.email == 'neokyj72@gmail.com'">yjkim@shinwhaintec.co.kr</span>
+        <span v-else-if="user.email == 'alswjd37018407@gmail.com'">mjcho@shinwhaintec.co.kr</span>
+        <span v-else-if="user.email == 'soulsorter@gmail.com'">dchan@shinwhaintec.co.kr</span>
+        <span v-else-if="user.email == 'jgh208011@gmail.com'">ghjung@shinwhaintec.co.kr</span>
+        <span v-else-if="user.email == 'yain369@gmail.com'">sjpark@shinwhaintec.co.kr</span>
       </template>
       <v-switch
         color="red"
         v-model="$vuetify.theme.dark"
         inset
-        class="ml-5 mr-4 mt-5"
+        class="ml-7 mr-4 mt-5"
       ></v-switch>
       <!-- title로 이전필요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
       <site-sign></site-sign>

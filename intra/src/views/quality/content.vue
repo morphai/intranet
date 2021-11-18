@@ -28,6 +28,8 @@
       <quality-iqc v-if=" document === 'iqc'" :info="info" :document="document"></quality-iqc>
       <quality-pqc v-if=" document === 'pqc'" :info="info" :document="document"></quality-pqc>
       <quality-oqc v-if=" document === 'oqc'" :info="info" :document="document"></quality-oqc>
+      <quality-incomingReport v-if=" document === 'incomingReport'" :info="info" :document="document"></quality-incomingReport>
+      <quality-outgoingReport v-if=" document === 'outgoingReport'" :info="info" :document="document"></quality-outgoingReport>
     </v-card>
   </v-container>
 </template>
@@ -44,6 +46,8 @@ import QualityCertification from './certification/index'
 import QualityIqc from './iqc/index'
 import QualityPqc from './pqc/index'
 import QualityOqc from './oqc/index'
+import QualityIncomingReport from './incomingReport/index'
+import QualityOutgoingReport from './outgoingReport/index'
 export default {
   components: {
     QualityArticle,
@@ -57,7 +61,9 @@ export default {
     QualityCertification,
     QualityIqc,
     QualityPqc,
-    QualityOqc
+    QualityOqc,
+    QualityIncomingReport,
+    QualityOutgoingReport
   },
   props: ['document'],
   data () {

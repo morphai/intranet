@@ -13,6 +13,8 @@
   <quality-iqc-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'iqc'" :document="document" :action="action"></quality-iqc-form>
   <quality-pqc-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'pqc'" :document="document" :action="action"></quality-pqc-form>
   <quality-oqc-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'oqc'" :document="document" :action="action"></quality-oqc-form>
+  <quality-incomingReport-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'incomingReport'" :document="document" :action="action"></quality-incomingReport-form>
+  <quality-outgoingReport-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'outgoingReport'" :document="document" :action="action"></quality-outgoingReport-form>
   <production-content v-else-if="collection === 'production' && !action" :document="document"></production-content>
   <production-form v-else-if="collection === 'production' && action === 'production-write'" :document="document" :action="action"></production-form>
   <Production-mlist-form v-else-if="collection === 'production' && action === 'article-write' && document === 'machine-list'" :document= "document" :action="action"></Production-mlist-form>
@@ -47,6 +49,8 @@ import QualityCertificationForm from './quality/certification/form'
 import QualityIqcForm from './quality/iqc/form'
 import QualityPqcForm from './quality/pqc/form'
 import QualityOqcForm from './quality/oqc/form'
+import QualityIncomingReportForm from './quality/incomingReport/form'
+import QualityOutgoingReportForm from './quality/outgoingReport/form'
 import ProductionContent from './production/content'
 import ProductionForm from './production/form'
 import ProductionMlistForm from './production/mlist/form'
@@ -81,6 +85,8 @@ export default {
     QualityIqcForm,
     QualityPqcForm,
     QualityOqcForm,
+    QualityIncomingReportForm,
+    QualityOutgoingReportForm,
     ProductionContent,
     ProductionForm,
     ProductionMlistForm,

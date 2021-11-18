@@ -44,7 +44,6 @@ export default {
       headers: [
         { value: 'title', text: 'Model' },
         { value: 'partName', text: 'Part Name' },
-        { value: 'toolSeq', text: '금형차수' },
         { value: 'revDate', text: '등록일자' },
         { value: 'docNo', text: '문서번호' },
         { value: 'dataSheet', text: '문서' },

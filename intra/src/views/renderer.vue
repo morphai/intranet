@@ -10,6 +10,9 @@
   <quality-reliability-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'reliability'" :document="document" :action="action"></quality-reliability-form>
   <quality-pfmea-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'pfmea'" :document="document" :action="action"></quality-pfmea-form>
   <quality-certification-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'certification'" :document="document" :action="action"></quality-certification-form>
+  <quality-iqc-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'iqc'" :document="document" :action="action"></quality-iqc-form>
+  <quality-pqc-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'pqc'" :document="document" :action="action"></quality-pqc-form>
+  <quality-oqc-form v-else-if="collection === 'quality' && action === 'article-write' && document === 'oqc'" :document="document" :action="action"></quality-oqc-form>
   <production-content v-else-if="collection === 'production' && !action" :document="document"></production-content>
   <production-form v-else-if="collection === 'production' && action === 'production-write'" :document="document" :action="action"></production-form>
   <Production-mlist-form v-else-if="collection === 'production' && action === 'article-write' && document === 'machine-list'" :document= "document" :action="action"></Production-mlist-form>
@@ -41,6 +44,9 @@ import Quality4mForm from './quality/4m/form'
 import QualityReliabilityForm from './quality/reliability/form'
 import QualityPfmeaForm from './quality/pfmea/form'
 import QualityCertificationForm from './quality/certification/form'
+import QualityIqcForm from './quality/iqc/form'
+import QualityPqcForm from './quality/pqc/form'
+import QualityOqcForm from './quality/oqc/form'
 import ProductionContent from './production/content'
 import ProductionForm from './production/form'
 import ProductionMlistForm from './production/mlist/form'
@@ -72,6 +78,9 @@ export default {
     QualityReliabilityForm,
     QualityPfmeaForm,
     QualityCertificationForm,
+    QualityIqcForm,
+    QualityPqcForm,
+    QualityOqcForm,
     ProductionContent,
     ProductionForm,
     ProductionMlistForm,

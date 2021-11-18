@@ -25,6 +25,9 @@
       <quality-reliability v-if=" document === 'reliability'" :info="info" :document="document"></quality-reliability>
       <quality-pfmea v-if=" document === 'pfmea'" :info="info" :document="document"></quality-pfmea>
       <quality-certification v-if=" document === 'certification'" :info="info" :document="document"></quality-certification>
+      <quality-iqc v-if=" document === 'iqc'" :info="info" :document="document"></quality-iqc>
+      <quality-pqc v-if=" document === 'pqc'" :info="info" :document="document"></quality-pqc>
+      <quality-oqc v-if=" document === 'oqc'" :info="info" :document="document"></quality-oqc>
     </v-card>
   </v-container>
 </template>
@@ -38,8 +41,24 @@ import Quality4m from './4m/index'
 import QualityReliability from './reliability/index'
 import QualityPfmea from './pfmea/index'
 import QualityCertification from './certification/index'
+import QualityIqc from './iqc/index'
+import QualityPqc from './pqc/index'
+import QualityOqc from './oqc/index'
 export default {
-  components: { QualityArticle, QualityRohs, QualityNcr, QualityQmr, QualityPqcsheet, Quality4m, QualityReliability, QualityPfmea, QualityCertification },
+  components: {
+    QualityArticle,
+    QualityRohs,
+    QualityNcr,
+    QualityQmr,
+    QualityPqcsheet,
+    Quality4m,
+    QualityReliability,
+    QualityPfmea,
+    QualityCertification,
+    QualityIqc,
+    QualityPqc,
+    QualityOqc
+  },
   props: ['document'],
   data () {
     return {

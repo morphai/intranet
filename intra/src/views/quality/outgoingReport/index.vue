@@ -50,7 +50,7 @@ export default {
     return {
       headers: [
         { value: 'title', text: '자재구분' },
-        { value: 'supplier', text: '공급처' },
+        { value: 'supplier', text: '고객사' },
         { value: 'model', text: 'Model' },
         { value: 'partName', text: 'Part Name' },
         { value: 'inspecDate', text: '검사일' },

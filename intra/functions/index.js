@@ -54,3 +54,39 @@ exports.incrementProductionCount = functions.firestore.document('production/{bid
 exports.decrementProductionCount = functions.firestore.document('production/{bid}').onDelete(async (snap, context) => {
   await fdb.collection('meta').doc('production').update('count', admin.firestore.FieldValue.increment(-1))
 })
+
+exports.incrementMoldCount = functions.firestore.document('mold/{bid}').onCreate(async (snap, context) => {
+  try {
+    await fdb.collection('meta').doc('mold').update('count', admin.firestore.FieldValue.increment(1))
+  } catch (e) {
+    await fdb.collection('meta').doc('mold').set({ count: 1 })
+  }
+})
+
+exports.decrementMoldCount = functions.firestore.document('mold/{bid}').onDelete(async (snap, context) => {
+  await fdb.collection('meta').doc('mold').update('count', admin.firestore.FieldValue.increment(-1))
+})
+
+exports.incrementRndCount = functions.firestore.document('rnd/{bid}').onCreate(async (snap, context) => {
+  try {
+    await fdb.collection('meta').doc('rnd').update('count', admin.firestore.FieldValue.increment(1))
+  } catch (e) {
+    await fdb.collection('meta').doc('rnd').set({ count: 1 })
+  }
+})
+
+exports.decrementRndCount = functions.firestore.document('rnd/{bid}').onDelete(async (snap, context) => {
+  await fdb.collection('meta').doc('rnd').update('count', admin.firestore.FieldValue.increment(-1))
+})
+
+exports.incrementSpcCount = functions.firestore.document('spc/{bid}').onCreate(async (snap, context) => {
+  try {
+    await fdb.collection('meta').doc('spc').update('count', admin.firestore.FieldValue.increment(1))
+  } catch (e) {
+    await fdb.collection('meta').doc('spc').set({ count: 1 })
+  }
+})
+
+exports.decrementSpcCount = functions.firestore.document('spc/{bid}').onDelete(async (snap, context) => {
+  await fdb.collection('meta').doc('spc').update('count', admin.firestore.FieldValue.increment(-1))
+})

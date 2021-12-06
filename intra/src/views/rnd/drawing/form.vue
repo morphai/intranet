@@ -5,7 +5,7 @@
         <v-toolbar defect="primary" dark dense>
           <v-toolbar-title>게시판 글 작성</v-toolbar-title>
         <v-spacer/>
-        <v-btn icon @click="$router.push('/rnd/' + document)"><v-icon>mdi-arrow-left</v-icon></v-btn>
+        <v-btn icon @click="$router.push('/spc/' + document)"><v-icon>mdi-arrow-left</v-icon></v-btn>
         <v-btn icon @click="save" :disabled="!user"><v-icon>mdi-content-save</v-icon></v-btn>
         </v-toolbar>
         <v-card-text>
@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     async fetch () {
-      this.ref = this.$firebase.firestore().collection('rnd').doc(this.document)
+      this.ref = this.$firebase.firestore().collection('spc').doc(this.document)
       if (!this.articleId) return
       const doc = await this.ref.collection('articles').doc(this.articleId).get()
       this.exists = doc.exists
@@ -112,10 +112,10 @@ export default {
         await batch.commit()
       } finally {
         this.loading = false
-        this.$router.push('/rnd/' + this.document)
+        this.$router.push('/spc/' + this.document)
       }
     }
   }
 }
 </script>
-<!-- model 을(를) 타이틀로 변경(사유: display-rnd-firestore를 공용 title로 사용하기 위함) -->
+<!-- model 을(를) 타이틀로 변경(사유: display-spc-firestore를 공용 title로 사용하기 위함) -->

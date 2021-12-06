@@ -32,6 +32,9 @@
   <mold-repair-form v-else-if="collection === 'mold' && action === 'article-write' && document === 'repair'" :document= "document" :action="action"></mold-repair-form>
   <mold-tooling-form v-else-if="collection === 'mold' && action === 'article-write' && document === 'tooling'" :document= "document" :action="action"></mold-tooling-form>
   <mold-shot-form v-else-if="collection === 'mold' && action === 'article-write' && document === 'shot'" :document= "document" :action="action"></mold-shot-form>
+  <spc-content v-else-if="collection === 'spc' && !action" :document="document"></spc-content>
+  <spc-form v-else-if="collection === 'spc' && action === 'spc-write'" :document="document" :action="action"></spc-form>
+  <spc-pqc-form v-else-if="collection === 'spc' && action === 'article-write' && document === 'pqc'" :document= "document" :action="action"></spc-pqc-form>
   <error-page v-else></error-page>
 </template>
 <script>
@@ -68,6 +71,9 @@ import MoldForm from './mold/form'
 import MoldRepairForm from './mold/repair/form'
 import MoldToolingForm from './mold/tooling/form'
 import MoldShotForm from './mold/shot/form'
+import SpcContent from './spc/content'
+import SpcForm from './spc/form'
+import SpcPqcForm from './spc/pqc/form'
 import ErrorPage from './error'
 export default {
   components: {
@@ -104,6 +110,9 @@ export default {
     MoldRepairForm,
     MoldToolingForm,
     MoldShotForm,
+    SpcContent,
+    SpcForm,
+    SpcPqcForm,
     ErrorPage
   },
   computed: {

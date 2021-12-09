@@ -7,45 +7,37 @@
       :options.sync="options"
       :items-per-page="5"
       :footer-props="{
-        'items-per-page-options':[10, 20, 30, 50],
+        'items-per-page-options':[10, 20, 30, 50, 100],
       }"
       must-sort
       item-key="id"
       dense
     >
       <template v-slot:item.id="{item}">
-        <a @click="openDialog(item)">{{item.id}}</a>
+        <a @click="openDialog(item)"><v-icon color="primary">mdi-file</v-icon></a>
       </template>
-      <template v-slot:item.createdAt="{item}">
-        <display-time :time="item.createdAt"></display-time>
-      </template>
-      <!-- <template v-slot:item.user.displayName="{item}">
-        <display-user :user="item.user"></display-user>
-      </template> -->
 
     </v-data-table>
-    <v-dialog v-if="selectedItem" v-model="dialog" max-width="1000">
+    <v-dialog v-if="selectedItem" v-model="dialog" max-width="600">
       <display-spc-firestore :document="document" :item="selectedItem" @close="dialog=false"></display-spc-firestore>
     </v-dialog>
   </div>
 </template>
 <script>
 import { head, last } from 'lodash'
-import DisplayTime from '@/components/display-time'
-// import DisplayUser from '@/components/display-user'
 import DisplaySpcFirestore from '@/components/display-spc-firestore'
 export default {
-  components: { DisplayTime, DisplaySpcFirestore },
+  components: { DisplaySpcFirestore },
   props: ['info', 'document'],
   data () {
     return {
       headers: [
-        { value: 'id', text: 'ID', sortable: false },
+        { value: 'id', text: 'Action', sortable: false },
         { value: 'issueDate', text: 'Date' },
-        { value: 'cycle', text: 'Cycle' },
+        { value: 'inspectionCycle', text: 'Time' },
         { value: 'model', text: 'Model' },
-        { value: 'partName', text: 'Part_Name' },
-        { value: 'ToolingNo', text: 'Tooling_No' },
+        { value: 'partName', text: 'P/Name' },
+        { value: 'toolingNo', text: '금형차수' },
         { value: 'cavity', text: 'Cavity' },
         { value: 'spc1', text: 'SPC1' },
         { value: 'spc2', text: 'SPC2' },
@@ -54,9 +46,7 @@ export default {
         { value: 'spc5', text: 'SPC5' },
         { value: 'spc6', text: 'SPC6' },
         { value: 'appearance', text: '와관' },
-        { value: 'articleWriter', text: '검사자' }
-        // { value: 'createdAt', text: '작성일' }
-        // { value: 'commentCount', text: '댓글' }
+        { value: 'inspector', text: '검사자' }
       ],
       items: [],
       unsubscribe: null,
@@ -124,8 +114,6 @@ export default {
         this.items = sn.docs.map(doc => {
           const item = doc.data()
           item.id = doc.id
-          item.createdAt = item.createdAt.toDate()
-          item.updatedAt = item.updatedAt.toDate()
           return item
         })
       })

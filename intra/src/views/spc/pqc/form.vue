@@ -34,7 +34,7 @@
           </v-row>
           <v-row>
             <v-col>
-              <v-text-field type="number" v-model.number="form.spc2" outlined label="SPC2"></v-text-field>
+              <v-text-field type="number" v-model.number="form.spc2" outlined label="SPC2" required></v-text-field>
             </v-col>
             <v-col>
               <v-text-field type="number" v-model.number="form.spc3" outlined label="SPC3" required></v-text-field>
@@ -190,3 +190,4 @@ export default {
 }
 </script>
 <!-- model 을(를) 타이틀로 변경(사유: display-spc-firestore를 공용 title로 사용하기 위함) -->
+<!-- null값 처리 참조자료 https://stackoverflow.com/questions/64118345/vuetify-v-text-field-type-number-set-null-instead-of-empty-string -->

@@ -5,12 +5,6 @@
       dense
     >
       <v-app-bar-nav-icon @click="drawer = !drawer" />
-      <v-btn class="ma-2" elevation="2" :href="'https://script.google.com/macros/s/AKfycby_1Yk3r1tGvsdE8MBrOM_M-Xn93UBzNOm5mOAsnQHnCRFu8vJtQQ3XZXjgjgOhGWnV/exec'" target="_blank">
-        PQC
-      </v-btn>
-      <v-btn class="ma-2" elevation="2" :href="'https://datastudio.google.com/reporting/f835e25b-4f9a-4ac1-bd7f-4fa1805aff7c/page/lL9DC'" target="_blank">
-        SPC
-      </v-btn>
       <v-btn class="ma-2" elevation="2" :href="'https://login.ecount.com/Login/KR/'" target="_blank">
         ERP
       </v-btn>

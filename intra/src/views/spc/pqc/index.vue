@@ -1,23 +1,31 @@
 <template>
   <div>
-    <v-data-table
-      :headers="headers"
-      :items="items"
-      :server-items-length="info.count"
-      :options.sync="options"
-      :items-per-page="5"
-      :footer-props="{
-        'items-per-page-options':[10, 20, 30, 50, 100],
-      }"
-      must-sort
-      item-key="id"
-      dense
-    >
-      <template v-slot:item.id="{item}">
-        <a @click="openDialog(item)"><v-icon color="primary">mdi-file</v-icon></a>
-      </template>
-
-    </v-data-table>
+    <v-card>
+      <v-card-title>
+        <!-- Data Table -->
+        <v-spacer></v-spacer>
+        <v-btn  @click="$router.push('/spc/pqc/dashboard')" color="primary" class="ma-2" elevation="2" target="_blank">
+          PQC Dashboard
+        </v-btn>
+      </v-card-title>
+      <v-data-table
+        :headers="headers"
+        :items="items"
+        :server-items-length="info.count"
+        :options.sync="options"
+        :items-per-page="5"
+        :footer-props="{
+          'items-per-page-options':[15, 50, 100, 500, 1000],
+        }"
+        must-sort
+        item-key="id"
+        dense
+      >
+        <template v-slot:item.id="{item}">
+          <a @click="openDialog(item)"><v-icon color="primary">mdi-file</v-icon></a>
+        </template>
+      </v-data-table>
+    </v-card>
     <v-dialog v-if="selectedItem" v-model="dialog" max-width="600">
       <display-spc-firestore :document="document" :item="selectedItem" @close="dialog=false"></display-spc-firestore>
     </v-dialog>

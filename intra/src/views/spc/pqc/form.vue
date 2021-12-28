@@ -8,65 +8,67 @@
         <v-btn icon @click="$router.push('/spc/' + document)"><v-icon>mdi-arrow-left</v-icon></v-btn>
         <v-btn icon @click="save" :disabled="!user"><v-icon>mdi-content-save</v-icon></v-btn>
         </v-toolbar>
-        <v-card-text>
+        <v-form ref="form" v-model="valid" lazy-validation>
           <v-row class="mt-3">
             <v-col>
-              <v-text-field type="date" v-model="form.issueDate" outlined label="Date" required></v-text-field>
+              <v-text-field type="date" v-model="form.issueDate" :rules="[(v) => !!v || '날짜를 입력하세요']" outlined label="Date" required></v-text-field>
             </v-col>
             <v-col>
-              <v-select v-model="form.inspectionCycle" :items="form.inspectionCycleList" outlined label="검사주기" required></v-select>
+              <v-select v-model="form.inspectionCycle" :items="form.inspectionCycleList" :rules="[(v) => !!v || '검사주기를 입력하세요']" outlined label="검사주기" required></v-select>
             </v-col>
             <v-col>
-              <v-select v-model="form.model" :items="form.modelList" outlined label="Model" required></v-select>
+              <v-select v-model="form.model" :items="form.modelList" :rules="[(v) => !!v || '모델명을 입력하세요']" outlined label="Model" required></v-select>
             </v-col>
             <v-col>
-              <v-select v-model="form.partName" :items="form.partNameList" outlined label="Part Name" required></v-select>
+              <v-select v-model="form.partName" :items="form.partNameList" outlined label="Part Name" :rules="[(v) => !!v || '부품명을 입력하세요']" required></v-select>
             </v-col>
             <v-col>
-              <v-select v-model="form.toolingNo" :items="form.toolingNoList" outlined label="Tooling No" required></v-select>
+              <v-select v-model="form.toolingNo" :items="form.toolingNoList" :rules="[(v) => !!v || '금형차수를 입력하세요']" outlined label="Tooling No" required></v-select>
             </v-col>
             <v-col>
-              <v-select v-model="form.cavity" :items="form.cavityList" outlined label="Cavity" required></v-select>
+              <v-select v-model="form.cavity" :items="form.cavityList" :rules="[(v) => !!v || '캐비티 번호를 입력하세요']" outlined label="Cavity" required></v-select>
             </v-col>
             <v-col>
-              <v-text-field type="number" v-model="form.spc1" outlined label="SPC1" required></v-text-field>
+              <v-text-field type="number" v-model.number="form.spc1" :rules="[(v) => !!v || '치수를 입력하세요']" outlined label="SPC1" required></v-text-field>
             </v-col>
           </v-row>
           <v-row>
             <v-col>
-              <v-text-field type="number" v-model="form.spc2" outlined label="SPC2" required></v-text-field>
+              <v-text-field type="number" v-model.number="form.spc2" outlined label="SPC2"></v-text-field>
             </v-col>
             <v-col>
-              <v-text-field type="number" v-model="form.spc3" outlined label="SPC3" required></v-text-field>
+              <v-text-field type="number" v-model.number="form.spc3" outlined label="SPC3" required></v-text-field>
             </v-col>
             <v-col>
-              <v-text-field type="number" v-model="form.spc4" outlined label="SPC4" required></v-text-field>
+              <v-text-field type="number" v-model.number="form.spc4" outlined label="SPC4" required></v-text-field>
             </v-col>
             <v-col>
-              <v-text-field type="number" v-model="form.spc5" outlined label="SPC5/Hole1" required></v-text-field>
+              <v-text-field type="number" v-model.number="form.spc5" outlined label="SPC5/Hole1" required></v-text-field>
             </v-col>
             <v-col>
-              <v-text-field type="number" v-model="form.spc6" outlined label="SPC6/Hole2" required></v-text-field>
+              <v-text-field type="number" v-model.number="form.spc6" outlined label="SPC6/Hole2" required></v-text-field>
             </v-col>
             <v-col>
-              <v-select v-model="form.appearance" :items="form.appearanceList" outlined label="외관상태" required></v-select>
+              <v-select v-model="form.appearance" :items="form.appearanceList" :rules="[(v) => !!v || '외관상태를 입력하세요']" outlined label="외관상태" required></v-select>
             </v-col>
             <v-col>
-              <v-select v-model="form.inspector" :items="form.inspectorList" outlined label="검사자" required></v-select>
+              <v-select v-model="form.inspector" :items="form.inspectorList" :rules="[(v) => !!v || '검사자를 입력하세요']" outlined label="검사자" required></v-select>
             </v-col>
           </v-row>
-        </v-card-text>
+        </v-form>
       </v-card>
     </v-form>
   </v-container>
 </template>
 <script>
+
 export default {
   props: ['document', 'action'],
   data () {
     return {
+      valid: true,
       form: {
-        issueDate: '',
+        issueDate: new Date().toISOString().substr(0, 10),
         inspectionCycle: '',
         inspectionCycleList: ['D1', 'D2', 'D3', 'N1', 'N2', 'N3'],
         model: '',
@@ -86,7 +88,7 @@ export default {
         appearance: '',
         appearanceList: ['OK', 'NG'],
         inspector: '',
-        inspectorList: ['정귀홍', '한동춘', '김용진', '조민정', '박석진', '곽명순', '이엔']
+        inspectorList: ['곽명순', '이엔', '정귀홍', '조민정', '김용진', '한동춘', '박석진']
       },
       exists: false,
       loading: false,
@@ -105,6 +107,11 @@ export default {
     document () {
       this.fetch()
     }
+    // setNull (newVal) {
+    //   if (newVal === '') {
+    //     this.form.spc2 = null
+    //   }
+    // }
   },
   created () {
     this.fetch()
@@ -135,38 +142,48 @@ export default {
       this.form.inspector = item.inspector
     },
     async save () {
-      this.loading = true
-      try {
-        const createdAt = new Date()
-        const id = createdAt.getTime().toString()
-        const doc = {
-          issueDate: this.form.issueDate,
-          inspectionCycle: this.form.inspectionCycle,
-          model: this.form.model,
-          partName: this.form.partName,
-          toolingNo: this.form.toolingNo,
-          cavity: this.form.cavity,
-          spc1: this.form.spc1,
-          spc2: this.form.spc2,
-          spc3: this.form.spc3,
-          spc4: this.form.spc4,
-          spc5: this.form.spc5,
-          spc6: this.form.spc6,
-          appearance: this.form.appearance,
-          inspector: this.form.inspector
+      await this.$refs.form.validate()
+      if (!this.valid) {
+        await this.$refs.form.reset()
+      }
+      if (this.valid) {
+        this.loading = true
+        if (this.form.spc2 === '') { this.form.spc2 = null }
+        if (this.form.spc3 === '') { this.form.spc3 = null }
+        if (this.form.spc4 === '') { this.form.spc4 = null }
+        if (this.form.spc5 === '') { this.form.spc5 = null }
+        if (this.form.spc6 === '') { this.form.spc6 = null }
+        try {
+          const createdAt = new Date()
+          const id = createdAt.getTime().toString()
+          const doc = {
+            issueDate: this.form.issueDate,
+            inspectionCycle: this.form.inspectionCycle,
+            model: this.form.model,
+            partName: this.form.partName,
+            toolingNo: this.form.toolingNo,
+            cavity: this.form.cavity,
+            spc1: this.form.spc1,
+            spc2: this.form.spc2,
+            spc3: this.form.spc3,
+            spc4: this.form.spc4,
+            spc5: this.form.spc5,
+            spc6: this.form.spc6,
+            appearance: this.form.appearance,
+            inspector: this.form.inspector
+          }
+          const batch = await this.$firebase.firestore().batch()
+          if (!this.articleId) {
+            batch.set(this.ref.collection('articles').doc(id), doc)
+            batch.update(this.ref, { count: this.$firebase.firestore.FieldValue.increment(1) })
+          } else {
+            batch.update(this.ref.collection('articles').doc(this.articleId), doc)
+          }
+          await batch.commit()
+        } finally {
+          this.loading = false
+          this.$router.push('/spc/' + this.document)
         }
-        const batch = await this.$firebase.firestore().batch()
-        if (!this.articleId) {
-          batch.set(this.ref.collection('articles').doc(id), doc)
-          batch.update(this.ref, { count: this.$firebase.firestore.FieldValue.increment(1) })
-        } else {
-          batch.update(this.ref.collection('articles').doc(this.articleId), doc)
-        }
-        await batch.commit()
-      } finally {
-        this.loading = false
-        this.$router.push('/spc/' + this.document)
-        console.log(this.form.cycle)
       }
     }
   }

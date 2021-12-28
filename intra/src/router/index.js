@@ -11,9 +11,9 @@ const routes = [
     component: Home
   },
   {
-    path: '/storage',
-    name: 'storage',
-    component: () => import('../views/storage')
+    path: '/spc/pqc/dashboard',
+    name: 'pqc_dashboard',
+    component: () => import('../views/spc/pqc/dashboard')
   },
   {
     path: '/editor',

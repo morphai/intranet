@@ -1,7 +1,7 @@
 <template>
   <v-tooltip bottom>
     <template v-slot:activator="{on}">
-      <v-chip v-on="on" color="primary">
+      <v-chip v-on="on">
         <v-avatar left>
           <v-img :src="user.photoURL"></v-img>
         </v-avatar>

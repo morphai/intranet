@@ -11,25 +11,23 @@
       }"
       must-sort
       item-key="id"
+      @click:row="openDialog"
     >
-      <template v-slot:item.title="{item}">
-        <a @click="openDialog(item)">{{item.title}}</a>
-      </template>
       <template v-slot:item.createdAt="{item}">
         <display-time :time="item.createdAt"></display-time>
       </template>
       <template v-slot:item.dataSheet1="{item}">
-        <v-chip color="primary" text-color="primary" outlined icon :href="item.dataSheet1" target="_blank"><v-icon>mdi-file-document-outline</v-icon></v-chip>
+        <v-chip icon :href="item.dataSheet1" target="_blank"><v-icon>mdi-file-document-outline</v-icon></v-chip>
       </template>
       <template v-slot:item.dataSheet2="{item}">
-        <v-chip color="primary" text-color="primary" outlined icon :href="item.dataSheet2" target="_blank"><v-icon>mdi-file-document-outline</v-icon></v-chip>
+        <v-chip icon :href="item.dataSheet2" target="_blank"><v-icon>mdi-file-document-outline</v-icon></v-chip>
       </template>
       <template v-slot:item.user.displayName="{item}">
         <display-user :user="item.user"></display-user>
       </template>
 
     </v-data-table>
-    <v-dialog v-if="selectedItem" v-model="dialog" max-width="1000">
+    <v-dialog v-if="selectedItem" v-model="dialog" max-width="600">
       <display-quality-firestore :document="document" :item="selectedItem" @close="dialog=false"></display-quality-firestore>
     </v-dialog>
   </div>
@@ -55,7 +53,6 @@ export default {
         { value: 'user.displayName', text: '작성자' },
         { value: 'readCount', text: '조회수' },
         { value: 'createdAt', text: '작성일' }
-        // { value: 'commentCount', text: '댓글' }
       ],
       items: [],
       unsubscribe: null,

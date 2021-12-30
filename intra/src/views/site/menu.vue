@@ -57,7 +57,7 @@
             </v-list-item-title>
           </v-list-item-content>
           <v-list-item-action v-if="$store.state.editable">
-            <v-btn icon :to="subItem.to" exact><v-icon>mdi-arrow-right-bold-circle-outline</v-icon></v-btn>
+            <v-btn icon :to="subItem.to" exact><v-icon>mdi-chevron-right</v-icon></v-btn>
           </v-list-item-action>
         </v-list-item>
         <v-list-item @click="openDialogSubItem(i, -1)" v-if="$store.state.editable && user.level < 1">

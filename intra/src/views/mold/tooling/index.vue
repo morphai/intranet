@@ -5,16 +5,14 @@
       :items="items"
       :server-items-length="info.count"
       :options.sync="options"
-      :items-per-page="5"
+      :items-per-page="10"
       :footer-props="{
-        'items-per-page-options':[5, 10, 20, 30, 50],
+        'items-per-page-options':[10, 20, 30, 50, 100],
       }"
       must-sort
       item-key="id"
+      @click:row="openDialog"
     >
-      <template v-slot:item.title="{item}">
-        <a @click="openDialog(item)">{{item.title}}</a>
-      </template>
       <template v-slot:item.createdAt="{item}">
         <display-time :time="item.createdAt"></display-time>
       </template>
@@ -23,7 +21,7 @@
       </template>
 
     </v-data-table>
-    <v-dialog v-if="selectedItem" v-model="dialog" max-width="1000">
+    <v-dialog v-if="selectedItem" v-model="dialog" max-width="600">
       <display-mold-firestore :document="document" :item="selectedItem" @close="dialog=false"></display-mold-firestore>
     </v-dialog>
   </div>
@@ -51,7 +49,6 @@ export default {
         { value: 'user.displayName', text: '작성자' },
         { value: 'readCount', text: '조회수' },
         { value: 'createdAt', text: '작성일' }
-        // { value: 'commentCount', text: '댓글' }
       ],
       items: [],
       unsubscribe: null,

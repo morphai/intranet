@@ -12,8 +12,8 @@
       <v-card-text v-if="info.createdAt">
         <v-alert border="top" type="info" colored-border elevation="2" dismissible>
           <div style="white-space: pre-line">{{info.description}}</div>
-          <div class="text-right caption">작성일: {{info.createdAt.toDate().toLocaleDateString()}}</div>
-          <div class="text-right caption">수정일: {{info.updatedAt.toDate().toLocaleDateString()}}</div>
+          <!-- <div class="text-right caption">작성일: {{info.createdAt.toDate().toLocaleDateString()}}</div>
+          <div class="text-right caption">수정일: {{info.updatedAt.toDate().toLocaleDateString()}}</div> -->
         </v-alert>
       </v-card-text>
       <spc-pqc v-if=" document === 'pqc'" :info="info" :document="document"></spc-pqc>

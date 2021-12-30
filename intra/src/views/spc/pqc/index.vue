@@ -13,17 +13,18 @@
         :items="items"
         :server-items-length="info.count"
         :options.sync="options"
-        :items-per-page="5"
+        :items-per-page="15"
         :footer-props="{
           'items-per-page-options':[15, 50, 100, 500, 1000],
         }"
         must-sort
         item-key="id"
         dense
+        @click:row="openDialog"
       >
-        <template v-slot:item.id="{item}">
+        <!-- <template v-slot:item.id="{item}">
           <a @click="openDialog(item)"><v-icon color="primary">mdi-file</v-icon></a>
-        </template>
+        </template> -->
       </v-data-table>
     </v-card>
     <v-dialog v-if="selectedItem" v-model="dialog" max-width="600">
@@ -40,7 +41,6 @@ export default {
   data () {
     return {
       headers: [
-        { value: 'id', text: 'Action', sortable: false },
         { value: 'issueDate', text: 'Date' },
         { value: 'inspectionCycle', text: 'Time' },
         { value: 'model', text: 'Model' },

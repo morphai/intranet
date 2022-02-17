@@ -14,7 +14,7 @@
           <v-text-field v-model="form.model" outlined label="Model(resin명)" required></v-text-field>
           <v-text-field v-model="form.partName" outlined label="Part Name(Grade)" required></v-text-field>
           <v-text-field type="date" v-model="form.inspecDate" outlined label="수입검사일" required></v-text-field>
-          <v-text-field type="date" v-model="form.lotNo" outlined label="Lot No" required></v-text-field>
+          <v-text-field v-model="form.lotNo" outlined label="Lot No" required></v-text-field>
           <v-text-field v-model="form.dataSheet1" outlined label="성적서 File"> required</v-text-field>
           <v-text-field v-model="form.dataSheet2" outlined label="측정 Data File"> required</v-text-field>
           <v-select :items="form.result" v-model="form.result" outlined label="판정결과" required></v-select>

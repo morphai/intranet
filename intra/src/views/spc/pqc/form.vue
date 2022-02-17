@@ -43,10 +43,10 @@
               <v-text-field type="number" v-model.number="form.spc4" outlined label="SPC4" required></v-text-field>
             </v-col>
             <v-col>
-              <v-text-field type="number" v-model.number="form.spc5" outlined label="SPC5/Hole1" required></v-text-field>
+              <v-text-field type="number" v-model.number="form.spc5" outlined label="SPC5/Hole1/전고(N)" required></v-text-field>
             </v-col>
             <v-col>
-              <v-text-field type="number" v-model.number="form.spc6" outlined label="SPC6/Hole2" required></v-text-field>
+              <v-text-field type="number" v-model.number="form.spc6" outlined label="SPC6/Hole2/평탄도(N)" required></v-text-field>
             </v-col>
             <v-col>
               <v-select v-model="form.appearance" :items="form.appearanceList" :rules="[(v) => !!v || '외관상태를 입력하세요']" outlined label="외관상태" required></v-select>
@@ -72,7 +72,7 @@ export default {
         inspectionCycle: '',
         inspectionCycleList: ['D1', 'D2', 'D3', 'N1', 'N2', 'N3'],
         model: '',
-        modelList: ['AP18C8K', 'CORTES(SOYUZ)', 'AVN', 'VOYAGER', 'DXD'],
+        modelList: ['AP18C8K', '14Z90Q', 'CORTES(SOYUZ)', 'AVN', 'VOYAGER', 'DXD'],
         partName: '',
         partNameList: ['FRAME', 'CASE', 'TOP CASE', 'BOTTOM CASE', 'LATCH', 'HANDLE'],
         toolingNo: '',

@@ -72,7 +72,7 @@ export default {
         inspectionCycle: '',
         inspectionCycleList: ['D1', 'D2', 'D3', 'N1', 'N2', 'N3'],
         model: '',
-        modelList: ['AP18C8K', '14Z90Q', 'CORTES(SOYUZ)', 'AVN', 'VOYAGER', 'DXD'],
+        modelList: ['AP18C8K', '14Z90Q', 'CORTES(SOYUZ)', 'AVN', 'VOYAGER', 'VOYAGER_M29', 'DXD'],
         partName: '',
         partNameList: ['FRAME', 'CASE', 'TOP CASE', 'BOTTOM CASE', 'LATCH', 'HANDLE'],
         toolingNo: '',

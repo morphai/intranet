@@ -53,7 +53,7 @@ export default {
         { value: 'spc4', text: 'SPC4' },
         { value: 'spc5', text: 'SPC5' },
         { value: 'spc6', text: 'SPC6' },
-        { value: 'appearance', text: '와관' },
+        { value: 'appearance', text: '외관' },
         { value: 'inspector', text: '검사자' }
       ],
       items: [],

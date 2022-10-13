@@ -19,7 +19,7 @@
         </p>
       </v-col>
     <v-col class="mt-1 text-center">
-      <v-btn rounded color="primary" dark large class="my-2">우측 상단에 로그인 하세요</v-btn>
+      <v-btn color="primary" dark large class="my-2">우측 상단에 로그인 하세요</v-btn>
     </v-col>
   </v-main>
 </template>

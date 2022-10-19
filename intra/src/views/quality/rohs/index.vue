@@ -17,7 +17,9 @@
         <display-time :time="item.createdAt"></display-time>
       </template>
       <template v-slot:item.dataSheet="{item}">
-        <v-chip icon :href="item.dataSheet" target="_blank"><v-icon>mdi-file-document-outline</v-icon></v-chip>
+        <v-chip :disabled="item.expirationDate < toDay" icon :href="item.dataSheet" target="_blank">
+          <v-icon>mdi-file-document-outline</v-icon>
+        </v-chip>
       </template>
       <template v-slot:item.user.displayName="{item}">
         <display-user :user="item.user"></display-user>
@@ -60,7 +62,9 @@ export default {
       },
       docs: [],
       dialog: false,
-      selectedItem: null
+      selectedItem: null,
+      // toDay: new Date().toLocaleDateString()
+      toDay: new Date().toISOString().substring(0, 10)
     }
   },
   watch: {

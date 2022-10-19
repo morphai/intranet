@@ -4,7 +4,10 @@
       <v-card-title>
         <!-- Data Table -->
         <v-spacer></v-spacer>
-        <v-btn  @click="$router.push('/spc/pqc/dashboard')" color="primary" class="ma-2" elevation="2" target="_blank">
+        <!-- <v-btn  @click="$router.push('/spc/pqc/dashboard')" color="primary" class="ma-2" elevation="2" target="_blank">
+          PQC Dashboard
+        </v-btn> -->
+        <v-btn color="primary" class="ma-2" elevation="2" :href="'https://datastudio.google.com/s/rXVgjXIz4VU'" target="_blank">
           PQC Dashboard
         </v-btn>
       </v-card-title>

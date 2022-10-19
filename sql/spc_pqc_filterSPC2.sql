@@ -17,8 +17,6 @@ SELECT
     WHEN Model = '12T50Q' AND PartName = 'FRAME' THEN 94.25
     WHEN Model = '12T50Q' AND PartName = 'BMU COVER' THEN 13.15
     WHEN Model = '17Z90N' AND PartName = 'FRAME' THEN 91.50
-    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 78.30
-    WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 78.30
     WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 109.10
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 158.20
     WHEN Model = 'DXD' AND PartName = 'LATCH' THEN 139.95
@@ -31,8 +29,6 @@ SELECT
     WHEN Model = '12T50Q' AND PartName = 'FRAME' THEN 94.20
     WHEN Model = '12T50Q' AND PartName = 'BMU COVER' THEN 13.10
     WHEN Model = '17Z90N' AND PartName = 'FRAME' THEN 91.45
-    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 78.25
-    WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 78.25
     WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 109.05
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 158.15
     WHEN Model = 'DXD' AND PartName = 'LATCH' THEN 139.90
@@ -45,8 +41,6 @@ SELECT
     WHEN Model = '12T50Q' AND PartName = 'FRAME' THEN 93.95
     WHEN Model = '12T50Q' AND PartName = 'BMU COVER' THEN 12.85
     WHEN Model = '17Z90N' AND PartName = 'FRAME' THEN 91.10
-    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 77.70
-    WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 77.70
     WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 108.70
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 157.80
     WHEN Model = 'DXD' AND PartName = 'LATCH' THEN 139.55
@@ -59,8 +53,6 @@ SELECT
     WHEN Model = '12T50Q' AND PartName = 'FRAME' THEN 94.00
     WHEN Model = '12T50Q' AND PartName = 'BMU COVER' THEN 12.90
     WHEN Model = '17Z90N' AND PartName = 'FRAME' THEN 91.15
-    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 77.75
-    WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 77.75
     WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 108.75
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 157.85
     WHEN Model = 'DXD' AND PartName = 'LATCH' THEN 139.60
@@ -73,8 +65,6 @@ SELECT
     WHEN Model = '12T50Q' AND PartName = 'FRAME' THEN 0.20
     WHEN Model = '12T50Q' AND PartName = 'BMU COVER' THEN 0.20
     WHEN Model = '17Z90N' AND PartName = 'FRAME' THEN 0.20
-    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 0.30
-    WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 0.30
     WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 0.40
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 0.40
     WHEN Model = 'DXD' AND PartName = 'LATCH' THEN 0.40
@@ -87,8 +77,6 @@ SELECT
     WHEN Model = '12T50Q' AND PartName = 'FRAME' THEN 0.10
     WHEN Model = '12T50Q' AND PartName = 'BMU COVER' THEN 0.10
     WHEN Model = '17Z90N' AND PartName = 'FRAME' THEN 0.10
-    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 0.15
-    WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 0.15
     WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 0.20
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 0.20
     WHEN Model = 'DXD' AND PartName = 'LATCH' THEN 0.20

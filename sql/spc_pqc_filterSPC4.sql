@@ -17,7 +17,7 @@ SELECT
     WHEN Model = 'CORTES(SOYUZ)' AND PartName = 'CASE' THEN 2.85
     WHEN Model = 'VOYAGER' AND PartName = 'CASE' THEN 2.65
     WHEN Model = 'VOYAGER_M29' AND PartName = 'CASE' THEN 4.85
-    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 6.00
+    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 7.00
     WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 17.30
     WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 6.65
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 108.00
@@ -30,7 +30,7 @@ SELECT
     WHEN Model = 'CORTES(SOYUZ)' AND PartName = 'CASE' THEN 2.83
     WHEN Model = 'VOYAGER' AND PartName = 'CASE' THEN 2.60
     WHEN Model = 'VOYAGER_M29' AND PartName = 'CASE' THEN 4.83
-    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 5.95
+    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 6.95
     WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 17.25
     WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 6.63
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 107.95
@@ -43,7 +43,7 @@ SELECT
     WHEN Model = 'CORTES(SOYUZ)' AND PartName = 'CASE' THEN 2.75
     WHEN Model = 'VOYAGER' AND PartName = 'CASE' THEN 2.45
     WHEN Model = 'VOYAGER_M29' AND PartName = 'CASE' THEN 4.65
-    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 5.80
+    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 6.80
     WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 16.90
     WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 6.55
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 107.60
@@ -56,7 +56,7 @@ SELECT
     WHEN Model = 'CORTES(SOYUZ)' AND PartName = 'CASE' THEN 2.77
     WHEN Model = 'VOYAGER' AND PartName = 'CASE' THEN 2.50
     WHEN Model = 'VOYAGER_M29' AND PartName = 'CASE' THEN 4.67
-    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 5.85
+    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 6.85
     WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 16.95
     WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 6.58
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 107.65

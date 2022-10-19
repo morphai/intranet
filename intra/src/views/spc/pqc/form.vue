@@ -88,7 +88,7 @@ export default {
         appearance: '',
         appearanceList: ['OK', 'NG'],
         inspector: '',
-        inspectorList: ['곽명순', '줄리엔', '정귀홍', '한동춘', '박석진']
+        inspectorList: ['곽명순', '줄리엔', '정귀홍', '한동춘', '박석진', '이엔', '김용진', '조민정']
       },
       exists: false,
       loading: false,

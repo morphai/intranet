@@ -16,8 +16,6 @@ SELECT
     WHEN Model = '14Z90Q' AND PartName = 'FRAME' THEN 0.50
     WHEN Model = '12T50Q' AND PartName = 'FRAME' THEN 0.50
     WHEN Model = '17Z90N' AND PartName = 'FRAME' THEN 0.50
-    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 6.00
-    WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 17.30
     WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 96.95
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 153.00
     -- WHEN Model = 'DXD' AND PartName = 'LATCH' THEN 5.85
@@ -28,8 +26,6 @@ SELECT
     WHEN Model = '14Z90Q' AND PartName = 'FRAME' THEN 0.45
     WHEN Model = '12T50Q' AND PartName = 'FRAME' THEN 0.45
     WHEN Model = '17Z90N' AND PartName = 'FRAME' THEN 0.45
-    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 5.95
-    WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 17.25
     WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 96.90
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 152.92
     -- WHEN Model = 'DXD' AND PartName = 'LATCH' THEN 5.85
@@ -40,8 +36,6 @@ SELECT
     WHEN Model = '14Z90Q' AND PartName = 'FRAME' THEN 0.10
     WHEN Model = '12T50Q' AND PartName = 'FRAME' THEN 0
     WHEN Model = '17Z90N' AND PartName = 'FRAME' THEN 0
-    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 5.80
-    WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 16.90
     WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 96.65
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 152.6
     -- WHEN Model = 'DXD' AND PartName = 'LATCH' THEN 5.75
@@ -50,23 +44,19 @@ SELECT
   CASE
     WHEN Model = 'AP18C8K' AND PartName = 'FRAME' THEN 254.00
     WHEN Model = '14Z90Q' AND PartName = 'FRAME' THEN 0.15
-
     WHEN Model = '12T50Q' AND PartName = 'FRAME' THEN 0.05
     WHEN Model = '17Z90N' AND PartName = 'FRAME' THEN 0.05
-    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 5.85
-    WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 16.95
     WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 96.70
-    WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 154.90
+    WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 152.52
     -- WHEN Model = 'DXD' AND PartName = 'LATCH' THEN 5.75
     -- WHEN Model = 'DXD' AND PartName = 'HANDLE' THEN 2.45
   END AS Guide_LCL,
   CASE
     WHEN Model = 'AP18C8K' AND PartName = 'FRAME' THEN 0.15
     WHEN Model = '14Z90Q' AND PartName = 'FRAME' THEN 0.20
+
     WHEN Model = '12T50Q' AND PartName = 'FRAME' THEN 0.25
     WHEN Model = '17Z90N' AND PartName = 'FRAME' THEN 0.25
-    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 0.10
-    WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 0.20
     WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 0.30
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 0.40
     -- WHEN Model = 'DXD' AND PartName = 'LATCH' THEN 0.10
@@ -77,8 +67,6 @@ SELECT
     WHEN Model = '14Z90Q' AND PartName = 'FRAME' THEN 0.10
     WHEN Model = '12T50Q' AND PartName = 'FRAME' THEN 0.20
     WHEN Model = '17Z90N' AND PartName = 'FRAME' THEN 0.20
-    WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 0.05
-    WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 0.10
     WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 0.15
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 0.20
     -- WHEN Model = 'DXD' AND PartName = 'LATCH' THEN 0.05

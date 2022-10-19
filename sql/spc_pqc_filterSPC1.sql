@@ -20,7 +20,7 @@ SELECT
     WHEN Model = 'VOYAGER_M29' AND PartName = 'CASE' THEN 18.10
     WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 78.30
     WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 78.30
-    WHEN Model = 'DXD' AND PartName = 'TOPCASE' THEN 110.90
+    WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 110.90
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 112.40
     WHEN Model = 'DXD' AND PartName = 'LATCH' THEN 10.00
     WHEN Model = 'DXD' AND PartName = 'HANDLE' THEN 36.40
@@ -37,7 +37,7 @@ SELECT
     WHEN Model = 'VOYAGER_M29' AND PartName = 'CASE' THEN 18.05
     WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 78.25
     WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 78.25
-    WHEN Model = 'DXD' AND PartName = 'TOPCASE' THEN 110.85
+    WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 110.85
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 112.35
     WHEN Model = 'DXD' AND PartName = 'LATCH' THEN 9.95
     WHEN Model = 'DXD' AND PartName = 'HANDLE' THEN 36.35
@@ -54,7 +54,7 @@ SELECT
     WHEN Model = 'VOYAGER_M29' AND PartName = 'CASE' THEN 17.90
     WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 77.70
     WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 77.70
-    WHEN Model = 'DXD' AND PartName = 'TOPCASE' THEN 110.50
+    WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 110.50
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 112.00
     WHEN Model = 'DXD' AND PartName = 'LATCH' THEN 9.80
     WHEN Model = 'DXD' AND PartName = 'HANDLE' THEN 36.20
@@ -71,7 +71,7 @@ SELECT
     WHEN Model = 'VOYAGER_M29' AND PartName = 'CASE' THEN 17.95
     WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 77.75
     WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 77.75
-    WHEN Model = 'DXD' AND PartName = 'TOPCASE' THEN 110.55
+    WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 110.55
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 112.05
     WHEN Model = 'DXD' AND PartName = 'LATCH' THEN 9.85
     WHEN Model = 'DXD' AND PartName = 'HANDLE' THEN 36.25
@@ -88,7 +88,7 @@ SELECT
     WHEN Model = 'VOYAGER_M29' AND PartName = 'CASE' THEN 0.10
     WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 0.30
     WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 0.30
-    WHEN Model = 'DXD' AND PartName = 'TOPCASE' THEN 0.40
+    WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 0.40
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 0.40
     WHEN Model = 'DXD' AND PartName = 'LATCH' THEN 0.20
     WHEN Model = 'DXD' AND PartName = 'HANDLE' THEN 0.20
@@ -105,7 +105,7 @@ SELECT
     WHEN Model = 'VOYAGER_M29' AND PartName = 'CASE' THEN 0.05
     WHEN Model = 'AVN' AND PartName = 'TOP CASE' THEN 0.15
     WHEN Model = 'AVN' AND PartName = 'BOTTOM CASE' THEN 0.15
-    WHEN Model = 'DXD' AND PartName = 'TOPCASE' THEN 0.20
+    WHEN Model = 'DXD' AND PartName = 'TOP CASE' THEN 0.20
     WHEN Model = 'DXD' AND PartName = 'BOTTOM CASE' THEN 0.20
     WHEN Model = 'DXD' AND PartName = 'LATCH' THEN 0.10
     WHEN Model = 'DXD' AND PartName = 'HANDLE' THEN 0.10

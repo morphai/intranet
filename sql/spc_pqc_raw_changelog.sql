@@ -1,0 +1,1 @@
+SELECT  FROM `shinwhaintranet.firestore_spc.spc_pqc_raw_changelog` LIMIT 1000

@@ -6,8 +6,8 @@
       </v-toolbar-title>
       <v-spacer/>
       <span v-if="user">
-        <v-btn v-if="user.level === 0 || user.level === 3" @click="articleWrite" icon><v-icon>mdi-pencil</v-icon></v-btn>
-        <v-btn v-if="user.level === 0 || user.level === 3" @click="remove" icon><v-icon>mdi-delete</v-icon></v-btn>
+        <v-btn v-if="user.level === 0 || user.level === 3 || user.level == 1" @click="articleWrite" icon><v-icon>mdi-pencil</v-icon></v-btn>
+        <v-btn v-if="user.level === 0 || user.level === 3 || user.level == 1" @click="remove" icon><v-icon>mdi-delete</v-icon></v-btn>
         <v-btn @click="$emit('close')" icon><v-icon>mdi-close</v-icon></v-btn>
       </span>
     </v-toolbar>

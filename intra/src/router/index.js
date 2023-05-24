@@ -31,6 +31,11 @@ const routes = [
     component: () => import('../views/renderer')
   },
   {
+    path: '/MesPv',
+    name: 'MesPv',
+    component: () => import('../views/MesPv')
+  },
+  {
     path: '*',
     name: 'error',
     component: () => import('../views/error')

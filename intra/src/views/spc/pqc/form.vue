@@ -72,7 +72,7 @@ export default {
         inspectionCycle: '',
         inspectionCycleList: ['D1', 'D2', 'D3', 'N1', 'N2', 'N3'],
         model: '',
-        modelList: ['AVN', 'AP18C8K', 'BDI FUSE BOX', 'CORTES(SOYUZ)', 'DXD', 'VOYAGER', 'VOYAGER_M29', '12T50Q', '14Z90Q', '17Z90N'],
+        modelList: ['AVN', 'AP18C8K', 'BDI FUSE BOX', 'CORTES(SOYUZ)', 'DXD', 'IMS7981', 'VOYAGER', 'VOYAGER_M29', '12T50Q', '14Z90Q', '17Z90N'],
         partName: '',
         partNameList: ['BMU COVER', 'BOTTOM CASE', 'CASE', 'FRAME', 'HANDLE', 'HOUSING', 'LATCH', 'TOP CASE'],
         toolingNo: '',

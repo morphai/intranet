@@ -17,13 +17,18 @@
         <span v-if="user.email == 'justice0408@gmail.com'">khkim@shinwhaintec.co.kr</span> <!--관리자-->
         <span v-else-if="user.email == 'daniel.kim7x@gmail.com'">khkim@shinwhaintec.co.kr</span> <!--developer-->
         <span v-else-if="user.email == 'kslee2471@gmail.com'">kslee@shinwhaintec.co.kr</span> <!--품질/이기섭-->
-        <span v-else-if="user.email == 'bobby48645@gmail.com'">hikwon@shinwhaintec.co.kr</span> <!--품질/권혁일-->
-        <span v-else-if="user.email == 'neokyj72@gmail.com'">yjkim@shinwhaintec.c=o.kr</span> <!--품질/김용진-->
-        <span v-else-if="user.email == 'alswjd37018407@gmail.com'">mjcho@shinwhaintec.co.kr</span> <!--품질/조민정-->
-        <span v-else-if="user.email == 'soulsorter@gmail.com'">dchan@shinwhaintec.co.kr</span> <!--영업/한동춘-->
         <span v-else-if="user.email == 'jgh208011@gmail.com'">ghjung@shinwhaintec.co.kr</span> <!--생산/정귀홍-->
-        <span v-else-if="user.email == 'yain369@gmail.com'">sjpark@shinwhaintec.co.kr</span> <!--개발/박석진-->
         <span v-else-if="user.email == 'k01084119633@gmail.com'">k01084119633@gmail.com</span> <!--품질/곽명순-->
+        <span v-else-if="user.email == 'kohh8611@gmail.com'">hhko@shinwhaintec.co.kr</span> <!--영업/고현호-->
+        <span v-else-if="user.email == 'choihyuk970318@gmail.com'">hchoi@shinwhaintec.co.kr</span> <!--개발/최혁-->
+        <span v-else-if="user.email == 'sohis41@gmail.com'">smjeon@shinwhaintec.co.kr</span> <!--자재구매/전승민-->
+        <!--
+          <span v-else-if="user.email == 'bobby48645@gmail.com'">hikwon@shinwhaintec.co.kr</span>
+          <span v-else-if="user.email == 'neokyj72@gmail.com'">yjkim@shinwhaintec.c=o.kr</span>
+          <span v-else-if="user.email == 'alswjd37018407@gmail.com'">mjcho@shinwhaintec.co.kr</span>
+          <span v-else-if="user.email == 'soulsorter@gmail.com'">dchan@shinwhaintec.co.kr</span>
+          <span v-else-if="user.email == 'yain369@gmail.com'">sjpark@shinwhaintec.co.kr</span>
+        -->
       </template>
       <v-switch
         color="red"

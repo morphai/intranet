@@ -37,6 +37,7 @@ export default {
 
 <!--
   신규인원추가시 순서
+  0. App.vue 추가.
   1. 위에 두 내용 추가
   approvedLevel
   admin= 0,

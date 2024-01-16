@@ -20,13 +20,8 @@
         <span v-else-if="user.email == 'jgh208011@gmail.com'">ghjung@shinwhaintec.co.kr</span> <!--생산/정귀홍-->
         <span v-else-if="user.email == 'k01084119633@gmail.com'">k01084119633@gmail.com</span> <!--품질/곽명순-->
         <span v-else-if="user.email == 'kohh8611@gmail.com'">hhko@shinwhaintec.co.kr</span> <!--영업/고현호-->
-        <span v-else-if="user.email == 'choihyuk970318@gmail.com'">hchoi@shinwhaintec.co.kr</span> <!--개발/최혁-->
-        <span v-else-if="user.email == 'sohis41@gmail.com'">smjeon@shinwhaintec.co.kr</span> <!--자재구매/전승민-->
+        <span v-else-if="user.email == 'jaewan77777@gmail.com'">jwpark@shinwhaintec.co.kr</span> <!--구매/박재완-->
         <!--
-          <span v-else-if="user.email == 'bobby48645@gmail.com'">hikwon@shinwhaintec.co.kr</span>
-          <span v-else-if="user.email == 'neokyj72@gmail.com'">yjkim@shinwhaintec.c=o.kr</span>
-          <span v-else-if="user.email == 'alswjd37018407@gmail.com'">mjcho@shinwhaintec.co.kr</span>
-          <span v-else-if="user.email == 'soulsorter@gmail.com'">dchan@shinwhaintec.co.kr</span>
           <span v-else-if="user.email == 'yain369@gmail.com'">sjpark@shinwhaintec.co.kr</span>
         -->
       </template>

@@ -21,6 +21,7 @@
         <span v-else-if="user.email == 'k01084119633@gmail.com'">k01084119633@gmail.com</span> <!--품질/곽명순-->
         <span v-else-if="user.email == 'kohh8611@gmail.com'">hhko@shinwhaintec.co.kr</span> <!--영업/고현호-->
         <span v-else-if="user.email == 'jaewan77777@gmail.com'">jwpark@shinwhaintec.co.kr</span> <!--구매/박재완-->
+        <span v-else-if="user.email == 'solitury12@gmail.com'">bjkim@shinwhaintec.co.kr</span> <!--금형/개발팀/김범준-->
         <!--
           <span v-else-if="user.email == 'yain369@gmail.com'">sjpark@shinwhaintec.co.kr</span>
         -->

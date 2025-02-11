@@ -78,76 +78,76 @@
 <script>
 // import siteTitle from '@/views/site/title'
 // import siteFooter from '@/views/site/footer'
-import siteMenu from "@/views/site/menu";
-import siteSign from "@/views/site/sign";
+import siteMenu from '@/views/site/menu'
+import siteSign from '@/views/site/sign'
 export default {
   components: { siteMenu, siteSign }, // siteTitle, siteFooter 제외
-  name: "App",
-  data() {
+  name: 'App',
+  data () {
     return {
       drawer: false,
       site: {
         menu: [
           {
-            title: "home",
-            icon: "mdi-home",
+            title: 'home',
+            icon: 'mdi-home',
             subItems: [
               {
-                title: "Dashboard",
-                to: "/",
+                title: 'Dashboard',
+                to: '/'
               },
               {
-                title: "About",
-                to: "/about",
-              },
-            ],
+                title: 'About',
+                to: '/about'
+              }
+            ]
           },
           {
-            title: "about",
-            icon: "mdi-information",
+            title: 'about',
+            icon: 'mdi-information',
             active: true,
             subItems: [
               {
-                title: "xxx",
-                to: "/xxx",
-              },
-            ],
-          },
+                title: 'xxx',
+                to: '/xxx'
+              }
+            ]
+          }
         ],
-        title: "Intranet",
-        footer: "Shinwhaintech Co.,Ltd",
-      },
-    };
+        title: 'Intranet',
+        footer: 'Shinwhaintech Co.,Ltd'
+      }
+    }
   },
-  created() {
-    this.subscribe();
+  created () {
+    this.subscribe()
   },
   computed: {
-    user() {
-      return this.$store.state.user;
-    },
+    user () {
+      return this.$store.state.user
+    }
   },
   methods: {
-    subscribe() {
+    subscribe () {
       this.$firebase
         .database()
         .ref()
-        .child("site")
+        .child('site')
         .on(
-          "value",
+          'value',
           (sn) => {
-            const v = sn.val();
+            const v = sn.val()
             if (!v) {
-              this.$firebase.database().ref().child("site").set(this.site);
-              return;
+              this.$firebase.database().ref().child('site').set(this.site)
+              return
             }
-            this.site = v;
+            this.site = v
           },
           (e) => {
-            console.log(e.message);
+            console.log(e.message)
           }
-        );
-    },
-  },
-};
+        )
+    }
+  }
+}
 </script>

@@ -68,7 +68,7 @@
         -->
 
         <!--품질팀/김선민-->
-        <span v-else-if="user.email == 'sunmin0878@gmail.com'"
+        <span v-else-if="user.email == 'sunmin3981@gmail.com'"
           >smkim@shinwhaintec.co.kr</span
         >
         >

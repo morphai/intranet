@@ -32,7 +32,7 @@
         <span v-else-if="user.email == 'qpaldm1@gmail.com'"
           >품질팀 / 정진우</span
         >
-        <span v-else-if="user.email == 'sunmin0878@gmail.com'"
+        <span v-else-if="user.email == 'sunmin3981@gmail.com'"
           >품질팀 / 김선민</span
         >
         <!--
@@ -67,7 +67,7 @@
     <span v-else-if="user.email == 'qpaldm1@gmail.com'"
       >jwjung@shinwhaintec.co.kr | 010-4142-1477</span
     >
-    <span v-else-if="user.email == 'sunmin0878@gmail.com'"
+    <span v-else-if="user.email == 'sunmin3981@gmail.com'"
       >smkim@shinwhaintec.co.kr | 010-3981-0878</span
     >
     <!--

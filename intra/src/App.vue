@@ -16,45 +16,62 @@
       <template v-if="user">
         <v-icon left>mdi-card-account-details</v-icon>{{ user.displayName }}
         <v-icon left class="ml-5">mdi-email</v-icon>
+
+        <!--관리자-->
         <span v-if="user.email == 'justice0408@gmail.com'"
           >khkim@shinwhaintec.co.kr</span
         >
-        <!--관리자-->
+
+        <!--developer-->
         <span v-else-if="user.email == 'daniel.kim7x@gmail.com'"
           >khkim@shinwhaintec.co.kr</span
         >
-        <!--developer-->
+
+        <!--품질/이기섭-->
         <span v-else-if="user.email == 'kslee2471@gmail.com'"
           >kslee@shinwhaintec.co.kr</span
         >
-        <!--품질/이기섭-->
+
+        <!--생산/정귀홍-->
         <span v-else-if="user.email == 'jgh208011@gmail.com'"
           >ghjung@shinwhaintec.co.kr</span
         >
-        <!--생산/정귀홍-->
+
+        <!--품질/곽명순-->
         <span v-else-if="user.email == 'k01084119633@gmail.com'"
           >k01084119633@gmail.com</span
         >
-        <!--품질/곽명순-->
+
+        <!--영업/고현호-->
         <span v-else-if="user.email == 'kohh8611@gmail.com'"
           >hhko@shinwhaintec.co.kr</span
         >
-        <!--영업/고현호-->
+
+        <!--구매/박재완-->
         <span v-else-if="user.email == 'jaewan77777@gmail.com'"
           >jwpark@shinwhaintec.co.kr</span
         >
-        <!--구매/박재완-->
+
+        <!--금형/개발팀/김범준-->
         <span v-else-if="user.email == 'solitury12@gmail.com'"
           >bjkim@shinwhaintec.co.kr</span
         >
-        <!--금형/개발팀/김범준-->
+
+        <!--품질팀/정진우-->
         <span v-else-if="user.email == 'qpaldm1@gmail.com'"
           >jwjung@shinwhaintec.co.kr</span
         >
-        <!--품질팀/정진우-->
+
+        <!--개발팀/박석진-->
         <!--
           <span v-else-if="user.email == 'yain369@gmail.com'">sjpark@shinwhaintec.co.kr</span>
         -->
+
+        <!--품질팀/김선민-->
+        <span v-else-if="user.email == 'sunmin0878@gmail.com'"
+          >smkim@shinwhaintec.co.kr</span
+        >
+        >
       </template>
       <v-switch
         color="red"
@@ -78,76 +95,76 @@
 <script>
 // import siteTitle from '@/views/site/title'
 // import siteFooter from '@/views/site/footer'
-import siteMenu from '@/views/site/menu'
-import siteSign from '@/views/site/sign'
+import siteMenu from "@/views/site/menu";
+import siteSign from "@/views/site/sign";
 export default {
   components: { siteMenu, siteSign }, // siteTitle, siteFooter 제외
-  name: 'App',
-  data () {
+  name: "App",
+  data() {
     return {
       drawer: false,
       site: {
         menu: [
           {
-            title: 'home',
-            icon: 'mdi-home',
+            title: "home",
+            icon: "mdi-home",
             subItems: [
               {
-                title: 'Dashboard',
-                to: '/'
+                title: "Dashboard",
+                to: "/",
               },
               {
-                title: 'About',
-                to: '/about'
-              }
-            ]
+                title: "About",
+                to: "/about",
+              },
+            ],
           },
           {
-            title: 'about',
-            icon: 'mdi-information',
+            title: "about",
+            icon: "mdi-information",
             active: true,
             subItems: [
               {
-                title: 'xxx',
-                to: '/xxx'
-              }
-            ]
-          }
+                title: "xxx",
+                to: "/xxx",
+              },
+            ],
+          },
         ],
-        title: 'Intranet',
-        footer: 'Shinwhaintech Co.,Ltd'
-      }
-    }
+        title: "Intranet",
+        footer: "Shinwhaintech Co.,Ltd",
+      },
+    };
   },
-  created () {
-    this.subscribe()
+  created() {
+    this.subscribe();
   },
   computed: {
-    user () {
-      return this.$store.state.user
-    }
+    user() {
+      return this.$store.state.user;
+    },
   },
   methods: {
-    subscribe () {
+    subscribe() {
       this.$firebase
         .database()
         .ref()
-        .child('site')
+        .child("site")
         .on(
-          'value',
+          "value",
           (sn) => {
-            const v = sn.val()
+            const v = sn.val();
             if (!v) {
-              this.$firebase.database().ref().child('site').set(this.site)
-              return
+              this.$firebase.database().ref().child("site").set(this.site);
+              return;
             }
-            this.site = v
+            this.site = v;
           },
           (e) => {
-            console.log(e.message)
+            console.log(e.message);
           }
-        )
-    }
-  }
-}
+        );
+    },
+  },
+};
 </script>

@@ -29,6 +29,9 @@
         <span v-else-if="user.email == 'solitury12@gmail.com'"
           >금형/개발팀 / 김범준</span
         >
+        <span v-else-if="user.email == 'seongyeonjin264@gmail.com'"
+          >금형/개발팀 / 성연진</span
+        >
         <span v-else-if="user.email == 'qpaldm1@gmail.com'"
           >품질팀 / 정진우</span
         >
@@ -63,6 +66,9 @@
     >
     <span v-else-if="user.email == 'solitury12@gmail.com'"
       >bjkim@shinwhaintec.co.kr | 010-4366-1929</span
+    >
+    <span v-else-if="user.email == 'seongyeonjin264@gmail.com'"
+      >yjseong@shinwhaintec.co.kr | 010-9580-5643</span
     >
     <span v-else-if="user.email == 'qpaldm1@gmail.com'"
       >jwjung@shinwhaintec.co.kr | 010-4142-1477</span

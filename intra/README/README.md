@@ -39,8 +39,13 @@ $ cd ..
 ```
 
 ## 신규인원 추가시 수정사항
+
 ```bash
 $ 1. display-user.vue : 2가지 추가
 $ 2. App.vue : 1가지 추가
 $ cd ..
 ```
+
+## node version
+
+v16.20.2

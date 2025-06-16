@@ -57,6 +57,11 @@
           >bjkim@shinwhaintec.co.kr</span
         >
 
+        <!--금형/개발팀/성연진-->
+        <span v-else-if="user.email == 'seongyeonjin264@gmail.com'"
+          >yjseong@shinwhaintec.co.kr</span
+        >
+
         <!--품질팀/정진우-->
         <span v-else-if="user.email == 'qpaldm1@gmail.com'"
           >jwjung@shinwhaintec.co.kr</span

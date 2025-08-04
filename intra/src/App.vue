@@ -76,6 +76,10 @@
         <span v-else-if="user.email == 'sunmin3981@gmail.com'"
           >smkim@shinwhaintec.co.kr</span
         >
+        <!--품질팀/김구현-->
+        <span v-else-if="user.email == 'guhyeonkim@gmail.com'"
+          >ghkim@shinwhaintec.co.kr</span
+        >
         >
       </template>
       <v-switch

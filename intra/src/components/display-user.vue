@@ -38,6 +38,9 @@
         <span v-else-if="user.email == 'sunmin3981@gmail.com'"
           >품질팀 / 김선민</span
         >
+        <span v-else-if="user.email == 'guhyeonkim@gmail.com'"
+          >품질팀 / 김구현</span
+        >
         <!--
           <span v-else-if="user.email == 'yain369@gmail.com'">개발팀 / 박석진</span>
         -->
@@ -75,6 +78,9 @@
     >
     <span v-else-if="user.email == 'sunmin3981@gmail.com'"
       >smkim@shinwhaintec.co.kr | 010-3981-0878</span
+    >
+    <span v-else-if="user.email == 'guhyeonkim@gmail.com'"
+      >ghkim@shinwhaintec.co.kr | 010-2876-3943</span
     >
     <!--
       <span v-else-if="user.email == 'yain369@gmail.com'">sjpark@shinwhaintec.co.kr | 010-2292-3888</span>

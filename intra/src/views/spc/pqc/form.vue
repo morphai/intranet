@@ -72,9 +72,9 @@ export default {
         inspectionCycle: '',
         inspectionCycleList: ['D1', 'D2', 'D3', 'N1', 'N2', 'N3'],
         model: '',
-        modelList: ['AVN', 'AP18C8K', 'AP18E8M', 'AP23A8L', 'BDI FUSE BOX', 'CORTES(SOYUZ)', 'DXD', 'IMS7981', 'P2 CARTRIDGE', 'VOYAGER', 'VOYAGER_M29', '12T50Q', '14Z90Q', '17Z90N'],
+        modelList: ['AVN', 'AP18C8K', 'AP18E8M', 'AP23A8L', 'BDI FUSE BOX', 'CORTES(SOYUZ)', 'DXD', 'IMS7981', 'P2 CARTRIDGE', 'P2_CARTRIDGE_PLUS', 'VOYAGER', 'VOYAGER_M29', '12T50Q', '14Z90Q', '17Z90N'],
         partName: '',
-        partNameList: ['BMU COVER', 'BOTTOM CASE', 'CASE', 'COVER', 'FRAME', 'HANDLE', 'HOUSING', 'INNER LOWER', 'LATCH', 'TOP CASE', 'UPPER'],
+        partNameList: ['BMU COVER', 'BOTTOM CASE', 'CASE', 'COVER', 'COVER_PLUS', 'FRAME', 'HANDLE', 'HOUSING', 'INNER LOWER', 'INNER LOWER_PLUS', 'LATCH', 'TOP CASE', 'UPPER', 'UPPER_PLUS'],
         toolingNo: '',
         toolingNoList: ['#01', '#02', '#03', '#04', '#05', '#06', '#07', '#08', '#09', '#10', '#11', '#12', '#13', '#14', '#15', '#16', '#17', '#18'],
         cavity: '',
@@ -88,7 +88,7 @@ export default {
         appearance: '',
         appearanceList: ['OK', 'NG'],
         inspector: '',
-        inspectorList: ['곽명순', '이기섭', '정귀홍', '고현호', '박석진']
+        inspectorList: ['곽명순', '김구현', '정귀홍', '고현호', '성연진']
       },
       exists: false,
       loading: false,
